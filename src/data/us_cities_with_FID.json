@@ -1,0 +1,721 @@
+[{
+        "Index": 1,
+        "FID": 2174,
+        "City": "New York",
+        "State": "NY",
+        "Overall Policing Budget": "$11,036,298,140",
+        "% of city funds spent on policing": "8%",
+        "city $ per resident for police": "$626",
+        "police department employee to resident ratio (1: number)": 162
+    },
+    {
+        "Index": 2,
+        "FID": 63,
+        "City": "Chicago",
+        "State": "IL",
+        "Overall Policing Budget": "$1,776,930,437",
+        "% of city funds spent on policing": "37%",
+        "city $ per resident for police": "$611",
+        "police department employee to resident ratio (1: number)": 183
+    },
+    {
+        "Index": 3,
+        "FID": 415,
+        "City": "Los Angeles",
+        "State": "CA",
+        "Overall Policing Budget": "$1,735,493,169",
+        "% of city funds spent on policing": "33%",
+        "city $ per resident for police": "$420",
+        "police department employee to resident ratio (1: number)": 308
+    },
+    {
+        "Index": 4,
+        "FID": 2987,
+        "City": "Philadelphia",
+        "State": "PA",
+        "Overall Policing Budget": "$956,632,151",
+        "% of city funds spent on policing": "15%",
+        "city $ per resident for police": "$468",
+        "police department employee to resident ratio (1: number)": 210
+    },
+    {
+        "Index": 5,
+        "FID": 910,
+        "City": "Phoenix",
+        "State": "AZ",
+        "Overall Policing Budget": "$909,129,491",
+        "% of city funds spent on policing": "41%",
+        "city $ per resident for police": "$341",
+        "police department employee to resident ratio (1: number)": 380
+    },
+    {
+        "Index": 6,
+        "FID": 3641,
+        "City": "Houston",
+        "State": "TX",
+        "Overall Policing Budget": "$899,879,053",
+        "% of city funds spent on policing": "36%",
+        "city $ per resident for police": "$387",
+        "police department employee to resident ratio (1: number)": 360
+    },
+    {
+        "Index": 7,
+        "FID": 554,
+        "City": "San Francisco",
+        "State": "CA",
+        "Overall Policing Budget": "$706,182,301",
+        "% of city funds spent on policing": "9%",
+        "city $ per resident for police": "$604",
+        "police department employee to resident ratio (1: number)": 275
+    },
+    {
+        "Index": 8,
+        "FID": 764,
+        "City": "Washington",
+        "State": "DC",
+        "Overall Policing Budget": "$655,379,632",
+        "% of city funds spent on policing": "5%",
+        "city $ per resident for police": "$744",
+        "police department employee to resident ratio (1: number)": 147
+    },
+    {
+        "Index": 9,
+        "FID": 1315,
+        "City": "Baltimore",
+        "State": "MD",
+        "Overall Policing Budget": "$549,046,349",
+        "% of city funds spent on policing": "26%",
+        "city $ per resident for police": "$840",
+        "police department employee to resident ratio (1: number)": 185
+    },
+    {
+        "Index": 10,
+        "FID": 3592,
+        "City": "Dallas",
+        "State": "TX",
+        "Overall Policing Budget": "$545,974,490",
+        "% of city funds spent on policing": "36%",
+        "city $ per resident for police": "$379",
+        "police department employee to resident ratio (1: number)": 346
+    },
+    {
+        "Index": 11,
+        "FID": 550,
+        "City": "San Diego",
+        "State": "CA",
+        "Overall Policing Budget": "$542,087,473",
+        "% of city funds spent on policing": "34%",
+        "city $ per resident for police": "$378",
+        "police department employee to resident ratio (1: number)": 537
+    },
+    {
+        "Index": 12,
+        "FID": 3549,
+        "City": "Austin",
+        "State": "TX",
+        "Overall Policing Budget": "$491,265,529",
+        "% of city funds spent on policing": "40%",
+        "city $ per resident for police": "$451",
+        "police department employee to resident ratio (1: number)": 357
+    },
+    {
+        "Index": 13,
+        "FID": 1678,
+        "City": "Jacksonville",
+        "State": "FL",
+        "Overall Policing Budget": "$481,594,597",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$533",
+        "police department employee to resident ratio (1: number)": 506
+    },
+    {
+        "Index": 14,
+        "FID": 3726,
+        "City": "San Antonio",
+        "State": "TX",
+        "Overall Policing Budget": "$479,091,284",
+        "% of city funds spent on policing": "37%",
+        "city $ per resident for police": "$313",
+        "police department employee to resident ratio (1: number)": 496
+    },
+    {
+        "Index": 15,
+        "FID": 558,
+        "City": "San Jose",
+        "State": "CA",
+        "Overall Policing Budget": "$473,208,901",
+        "% of city funds spent on policing": "30%",
+        "city $ per resident for police": "$434",
+        "police department employee to resident ratio (1: number)": 609
+    },
+    {
+        "Index": 16,
+        "FID": 2552,
+        "City": "Seattle",
+        "State": "WA",
+        "Overall Policing Budget": "$440,240,547",
+        "% of city funds spent on policing": "12%",
+        "city $ per resident for police": "$546",
+        "police department employee to resident ratio (1: number)": 340
+    },
+    {
+        "Index": 17,
+        "FID": 1437,
+        "City": "Boston",
+        "State": "MA",
+        "Overall Policing Budget": "$431,731,291",
+        "% of city funds spent on policing": "16%",
+        "city $ per resident for police": "$595",
+        "police department employee to resident ratio (1: number)": 229
+    },
+    {
+        "Index": 18,
+        "FID": 3613,
+        "City": "Fort Worth",
+        "State": "TX",
+        "Overall Policing Budget": "$352,893,268",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$297",
+        "police department employee to resident ratio (1: number)": 203
+    },
+    {
+        "Index": 19,
+        "FID": 2387,
+        "City": "Columbus",
+        "State": "OH",
+        "Overall Policing Budget": "$347,780,657",
+        "% of city funds spent on policing": "37%",
+        "city $ per resident for police": "$398",
+        "police department employee to resident ratio (1: number)": 218
+    },
+    {
+        "Index": 20,
+        "FID": 2637,
+        "City": "Milwaukee",
+        "State": "WI",
+        "Overall Policing Budget": "$321,470,403",
+        "% of city funds spent on policing": "58%",
+        "city $ per resident for police": "$502",
+        "police department employee to resident ratio (1: number)": 209
+    },
+    {
+        "Index": 21,
+        "FID": 1533,
+        "City": "Detroit",
+        "State": "MI",
+        "Overall Policing Budget": "$318,193,356",
+        "% of city funds spent on policing": "29%",
+        "city $ per resident for police": "$460",
+        "police department employee to resident ratio (1: number)": 202
+    },
+    {
+        "Index": 22,
+        "FID": 1994,
+        "City": "Honolulu",
+        "State": "HI",
+        "Overall Policing Budget": "$301,701,305",
+        "% of city funds spent on policing": "17%",
+        "city $ per resident for police": "$282",
+        "police department employee to resident ratio (1: number)": 352
+    },
+    {
+        "Index": 23,
+        "FID": 2264,
+        "City": "Charlotte",
+        "State": "NC",
+        "Overall Policing Budget": "$285,877,585",
+        "% of city funds spent on policing": "39%",
+        "city $ per resident for police": "$327",
+        "police department employee to resident ratio (1: number)": 349
+    },
+    {
+        "Index": 24,
+        "FID": 280,
+        "City": "Indianapolis",
+        "State": "IN",
+        "Overall Policing Budget": "$283,571,003",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$279",
+        "police department employee to resident ratio (1: number)": 421
+    },
+    {
+        "Index": 25,
+        "FID": 1724,
+        "City": "Miami",
+        "State": "FL",
+        "Overall Policing Budget": "$281,251,000",
+        "% of city funds spent on policing": "33%",
+        "city $ per resident for police": "$564",
+        "police department employee to resident ratio (1: number)": 260
+    },
+    {
+        "Index": 26,
+        "FID": 674,
+        "City": "Denver",
+        "State": "CO",
+        "Overall Policing Budget": "$277,927,093",
+        "% of city funds spent on policing": "17%",
+        "city $ per resident for police": "$355",
+        "police department employee to resident ratio (1: number)": 217
+    },
+    {
+        "Index": 27,
+        "FID": 3514,
+        "City": "Memphis",
+        "State": "TN",
+        "Overall Policing Budget": "$274,511,008",
+        "% of city funds spent on policing": "38%",
+        "city $ per resident for police": "$419",
+        "police department employee to resident ratio (1: number)": 227
+    },
+    {
+        "Index": 28,
+        "FID": 412,
+        "City": "Long Beach",
+        "State": "CA",
+        "Overall Policing Budget": "$265,466,991",
+        "% of city funds spent on policing": "43%",
+        "city $ per resident for police": "$522",
+        "police department employee to resident ratio (1: number)": 373
+    },
+    {
+        "Index": 29,
+        "FID": 3285,
+        "City": "Kansas City",
+        "State": "MO",
+        "Overall Policing Budget": "$262,247,405",
+        "% of city funds spent on policing": "43%",
+        "city $ per resident for police": "$510",
+        "police department employee to resident ratio (1: number)": 245
+    },
+    {
+        "Index": 30,
+        "FID": 1879,
+        "City": "Atlanta",
+        "State": "GA",
+        "Overall Policing Budget": "$248,508,775",
+        "% of city funds spent on policing": "30%",
+        "city $ per resident for police": "$412",
+        "police department employee to resident ratio (1: number)": 209
+    },
+    {
+        "Index": 31,
+        "FID": 2913,
+        "City": "Portland",
+        "State": "OR",
+        "Overall Policing Budget": "$238,190,326",
+        "% of city funds spent on policing": "31%",
+        "city $ per resident for police": "$352",
+        "police department employee to resident ratio (1: number)": 501
+    },
+    {
+        "Index": 32,
+        "FID": 2859,
+        "City": "Oklahoma City",
+        "State": "OK",
+        "Overall Policing Budget": "$226,626,456",
+        "% of city funds spent on policing": "29%",
+        "city $ per resident for police": "$238",
+        "police department employee to resident ratio (1: number)": 421
+    },
+    {
+        "Index": 33,
+        "FID": 3520,
+        "City": "Nashville",
+        "State": "TN",
+        "Overall Policing Budget": "$216,790,900",
+        "% of city funds spent on policing": "21%",
+        "city $ per resident for police": "$311",
+        "police department employee to resident ratio (1: number)": 341
+    },
+    {
+        "Index": 34,
+        "FID": 2037,
+        "City": "Albuquerque",
+        "State": "NM",
+        "Overall Policing Budget": "$211,084,000",
+        "% of city funds spent on policing": "32%",
+        "city $ per resident for police": "$367",
+        "police department employee to resident ratio (1: number)": 343
+    },
+    {
+        "Index": 35,
+        "FID": 3468,
+        "City": "Newark",
+        "State": "NJ",
+        "Overall Policing Budget": "$207,955,896",
+        "% of city funds spent on policing": "29%",
+        "city $ per resident for police": "$737",
+        "police department employee to resident ratio (1: number)": 341
+    },
+    {
+        "Index": 36,
+        "FID": 1128,
+        "City": "Fresno",
+        "State": "CA",
+        "Overall Policing Budget": "$201,764,000",
+        "% of city funds spent on policing": "40%",
+        "city $ per resident for police": "$367",
+        "police department employee to resident ratio (1: number)": 470
+    },
+    {
+        "Index": 37,
+        "FID": 1278,
+        "City": "New Orleans",
+        "State": "LA",
+        "Overall Policing Budget": "$200,500,213",
+        "% of city funds spent on policing": "24%",
+        "city $ per resident for police": "$449",
+        "police department employee to resident ratio (1: number)": 156
+    },
+    {
+        "Index": 38,
+        "FID": 902,
+        "City": "Mesa",
+        "State": "AZ",
+        "Overall Policing Budget": "$198,152,493",
+        "% of city funds spent on policing": "11%",
+        "city $ per resident for police": "$389",
+        "police department employee to resident ratio (1: number)": 406
+    },
+    {
+        "Index": 39,
+        "FID": 3162,
+        "City": "Minneapolis",
+        "State": "MN",
+        "Overall Policing Budget": "$193,360,000",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$444",
+        "police department employee to resident ratio (1: number)": 388
+    },
+    {
+        "Index": 40,
+        "FID": 931,
+        "City": "Tucson",
+        "State": "AZ",
+        "Overall Policing Budget": "$193,274,430",
+        "% of city funds spent on policing": "28%",
+        "city $ per resident for police": "$301",
+        "police department employee to resident ratio (1: number)": 475
+    },
+    {
+        "Index": 41,
+        "FID": 1220,
+        "City": "Louisville",
+        "State": "KY",
+        "Overall Policing Budget": "$191,988,200",
+        "% of city funds spent on policing": "29%",
+        "city $ per resident for police": "$297",
+        "police department employee to resident ratio (1: number)": 386
+    },
+    {
+        "Index": 42,
+        "FID": 541,
+        "City": "Sacramento",
+        "State": "CA",
+        "Overall Policing Budget": "$184,342,524",
+        "% of city funds spent on policing": "26%",
+        "city $ per resident for police": "$295",
+        "police department employee to resident ratio (1: number)": 475
+    },
+    {
+        "Index": 43,
+        "FID": 1828,
+        "City": "Tampa",
+        "State": "FL",
+        "Overall Policing Budget": "$176,982,462",
+        "% of city funds spent on policing": "41%",
+        "city $ per resident for police": "$450",
+        "police department employee to resident ratio (1: number)": 316
+    },
+    {
+        "Index": 44,
+        "FID": 3364,
+        "City": "Las Vegas",
+        "State": "NV",
+        "Overall Policing Budget": "$173,702,925",
+        "% of city funds spent on policing": "13%",
+        "city $ per resident for police": "$269",
+        "police department employee to resident ratio (1: number)": 276
+    },
+    {
+        "Index": 45,
+        "FID": 3353,
+        "City": "Omaha",
+        "State": "NE",
+        "Overall Policing Budget": "$159,838,743",
+        "% of city funds spent on policing": "38%",
+        "city $ per resident for police": "$340",
+        "police department employee to resident ratio (1: number)": 444
+    },
+    {
+        "Index": 46,
+        "FID": 3605,
+        "City": "El Paso",
+        "State": "TX",
+        "Overall Policing Budget": "$157,607,718",
+        "% of city funds spent on policing": "32%",
+        "city $ per resident for police": "$215",
+        "police department employee to resident ratio (1: number)": 451
+    },
+    {
+        "Index": 47,
+        "FID": 3316,
+        "City": "St. Louis",
+        "State": "MO",
+        "Overall Policing Budget": "$154,870,227",
+        "% of city funds spent on policing": "27%",
+        "city $ per resident for police": "$454",
+        "police department employee to resident ratio (1: number)": 169
+    },
+    {
+        "Index": 48,
+        "FID": 670,
+        "City": "Colorado Springs",
+        "State": "CO",
+        "Overall Policing Budget": "$140,388,709",
+        "% of city funds spent on policing": "34%",
+        "city $ per resident for police": "$239",
+        "police department employee to resident ratio (1: number)": 434
+    },
+    {
+        "Index": 49,
+        "FID": 864,
+        "City": "Anchorage",
+        "State": "AK",
+        "Overall Policing Budget": "$133,766,426",
+        "% of city funds spent on policing": "27%",
+        "city $ per resident for police": "$445",
+        "police department employee to resident ratio (1: number)": 477
+    },
+    {
+        "Index": 50,
+        "FID": 2868,
+        "City": "Tulsa",
+        "State": "OK",
+        "Overall Policing Budget": "$121,682,000",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$255",
+        "police department employee to resident ratio (1: number)": 355
+    },
+    {
+        "Index": 51,
+        "FID": 3546,
+        "City": "Arlington",
+        "State": "TX",
+        "Overall Policing Budget": "$117,847,632",
+        "% of city funds spent on policing": "44%",
+        "city $ per resident for police": "$296",
+        "police department employee to resident ratio (1: number)": 452
+    },
+    {
+        "Index": 52,
+        "FID": 2318,
+        "City": "Raleigh",
+        "State": "NC",
+        "Overall Policing Budget": "$109,694,902",
+        "% of city funds spent on policing": "21%",
+        "city $ per resident for police": "$233",
+        "police department employee to resident ratio (1: number)": 522
+    },
+    {
+        "Index": 53,
+        "FID": 2457,
+        "City": "Virginia Beach",
+        "State": "VA",
+        "Overall Policing Budget": "$102,960,533",
+        "% of city funds spent on policing": "9%",
+        "city $ per resident for police": "$229",
+        "police department employee to resident ratio (1: number)": 425
+    },
+    {
+        "Index": 54,
+        "FID": 718,
+        "City": "Bridgeport",
+        "State": "CT",
+        "Overall Policing Budget": "$102,312,652",
+        "% of city funds spent on policing": "18%",
+        "city $ per resident for police": "$706",
+        "police department employee to resident ratio (1: number)": 743
+    },
+    {
+        "Index": 55,
+        "FID": 809,
+        "City": "Birmingham",
+        "State": "AL",
+        "Overall Policing Budget": "$92,775,797",
+        "% of city funds spent on policing": "21%",
+        "city $ per resident for police": "$443",
+        "police department employee to resident ratio (1: number)": 192
+    },
+    {
+        "Index": 56,
+        "FID": 396,
+        "City": "Wichita",
+        "State": "KS",
+        "Overall Policing Budget": "$89,245,584",
+        "% of city funds spent on policing": "35%",
+        "city $ per resident for police": "$229",
+        "police department employee to resident ratio (1: number)": 462
+    },
+    {
+        "Index": 57,
+        "FID": 3021,
+        "City": "Providence",
+        "State": "RI",
+        "Overall Policing Budget": "$85,644,030",
+        "% of city funds spent on policing": "11%",
+        "city $ per resident for police": "$478",
+        "police department employee to resident ratio (1: number)": 281
+    },
+    {
+        "Index": 58,
+        "FID": 3813,
+        "City": "Salt Lake City",
+        "State": "UT",
+        "Overall Policing Budget": "$82,235,729",
+        "% of city funds spent on policing": "25%",
+        "city $ per resident for police": "$410",
+        "police department employee to resident ratio (1: number)": 282
+    },
+    {
+        "Index": 59,
+        "FID": 958,
+        "City": "Little Rock",
+        "State": "AR",
+        "Overall Policing Budget": "$80,209,890",
+        "% of city funds spent on policing": "38%",
+        "city $ per resident for police": "$405",
+        "police department employee to resident ratio (1: number)": 266
+    },
+    {
+        "Index": 60,
+        "FID": 337,
+        "City": "Des Moines",
+        "State": "IA",
+        "Overall Policing Budget": "$71,546,587",
+        "% of city funds spent on policing": "39%",
+        "city $ per resident for police": "$323",
+        "police department employee to resident ratio (1: number)": 455
+    },
+    {
+        "Index": 61,
+        "FID": 3,
+        "City": "Boise",
+        "State": "ID",
+        "Overall Policing Budget": "$70,561,456",
+        "% of city funds spent on policing": "29%",
+        "city $ per resident for police": "$306",
+        "police department employee to resident ratio (1: number)": 563
+    },
+    {
+        "Index": 62,
+        "FID": 763,
+        "City": "Wilmington",
+        "State": "DE",
+        "Overall Policing Budget": "$59,770,276",
+        "% of city funds spent on policing": "34%",
+        "city $ per resident for police": "$825",
+        "police department employee to resident ratio (1: number)": 186
+    },
+    {
+        "Index": 63,
+        "FID": 3032,
+        "City": "Charleston",
+        "State": "SC",
+        "Overall Policing Budget": "$53,445,152",
+        "% of city funds spent on policing": "22%",
+        "city $ per resident for police": "$379",
+        "police department employee to resident ratio (1: number)": 256
+    },
+    {
+        "Index": 64,
+        "FID": 3083,
+        "City": "Sioux Falls",
+        "State": "SD",
+        "Overall Policing Budget": "$41,028,140",
+        "% of city funds spent on policing": "23%",
+        "city $ per resident for police": "$221",
+        "police department employee to resident ratio (1: number)": 584
+    },
+    {
+        "Index": 65,
+        "FID": 3226,
+        "City": "Jackson",
+        "State": "MS",
+        "Overall Policing Budget": "$37,523,140",
+        "% of city funds spent on policing": "28%",
+        "city $ per resident for police": "$216",
+        "police department employee to resident ratio (1: number)": 242
+    },
+    {
+        "Index": 66,
+        "FID": 3333,
+        "City": "Billings",
+        "State": "MT",
+        "Overall Policing Budget": "$27,017,423",
+        "% of city funds spent on policing": "64%",
+        "city $ per resident for police": "$247",
+        "police department employee to resident ratio (1: number)": 601
+    },
+    {
+        "Index": 67,
+        "FID": 3389,
+        "City": "Manchester",
+        "State": "NH",
+        "Overall Policing Budget": "$25,285,675",
+        "% of city funds spent on policing": "16%",
+        "city $ per resident for police": "$225",
+        "police department employee to resident ratio (1: number)": 750
+    },
+    {
+        "Index": 68,
+        "FID": 2341,
+        "City": "Fargo",
+        "State": "ND",
+        "Overall Policing Budget": "$22,832,341",
+        "% of city funds spent on policing": "22%",
+        "city $ per resident for police": "$184",
+        "police department employee to resident ratio (1: number)": 598
+    },
+    {
+        "Index": 69,
+        "FID": 2580,
+        "City": "Charleston",
+        "State": "WV",
+        "Overall Policing Budget": "$22,489,588",
+        "% of city funds spent on policing": "25%",
+        "city $ per resident for police": "$482",
+        "police department employee to resident ratio (1: number)": 236
+    },
+    {
+        "Index": 70,
+        "FID": 3832,
+        "City": "Burlington",
+        "State": "VT",
+        "Overall Policing Budget": "$17,926,954",
+        "% of city funds spent on policing": "19%",
+        "city $ per resident for police": "$349",
+        "police department employee to resident ratio (1: number)": 303
+    },
+    {
+        "Index": 71,
+        "FID": 1301,
+        "City": "Portland",
+        "State": "ME",
+        "Overall Policing Budget": "$17,757,540",
+        "% of city funds spent on policing": "9%",
+        "city $ per resident for police": "$267",
+        "police department employee to resident ratio (1: number)": 301
+    },
+    {
+        "Index": 72,
+        "FID": 2680,
+        "City": "Cheyenne",
+        "State": "WY",
+        "Overall Policing Budget": "$14,493,787",
+        "% of city funds spent on policing": "26%",
+        "city $ per resident for police": "$342",
+        "police department employee to resident ratio (1: number)": 337
+    }
+]
