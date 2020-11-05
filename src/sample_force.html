@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+		<style  type = "text/css">
+      .node {
+        fill: steelblue;
+      }
+      
+      .axis .domain {
+        fill: none;
+        stroke: #000;
+        stroke-opacity: .3;
+        stroke-width: 10px;
+        stroke-linecap: round;
+      }
+      
+      .axis .halo {
+        fill: none;
+        stroke: #ddd;
+        stroke-width: 8px;
+        stroke-linecap: round;
+      }
+      
+      .slider .handle {
+        fill: #fff;
+        stroke: #000;
+        stroke-opacity: .5;
+        stroke-width: 1.25px;
+        cursor: crosshair;
+      }
+      </style>
+		<title>Collision detection with force layout</title>
+	</head>
+	<body>
+		<script>
+      var width = 960,
+    height = 900,
+    padding = 10,
+    min_padding = 0,
+    max_padding = 50,
+    maxRadius = 10,
+    n = 300;
+
+    // MAKING THE CIRCLES
+    
+    // initial random radius and random width and height 
+    // (within a certain range maxRadius, width, and height)
+    var nodes = d3.range(n).map(function(i) {
+      var r = Math.sqrt(1 / 1 * -Math.log(Math.random())) * maxRadius,
+            d = {id: i, radius: r, cx: width/2+Math.random()*150-75, cy: height/2+Math.random()*150-75};
+      return d;
+    });
+
+    console.log(nodes)
+
+    // d.x vs d.cx is absolute vs. relative location or relative vs absolute, not sure
+    // we're setting each node's absolute location to its relative location or vice versa
+    nodes.forEach(function(d) { d.x = d.cx; d.y = d.cy; });
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+
+    var circle = svg.selectAll("circle")
+        .data(nodes);
+
+    var enter_circle = circle.enter().append("circle")
+        .attr('class', 'node');
+
+    enter_circle
+      .attr("r", function(d) { return d.radius; })
+      .attr("cx", function(d) { return d.cx; })
+        .attr("cy", function(d) { return d.cy; });
+
+    // FORCES
+
+    var force = d3.layout.force()
+        .nodes(nodes)
+        .size([width, height])
+        .gravity(.02)
+        .charge(0)
+        .on("tick", tick)
+        .start();
+
+    force.alpha(.05);
+
+    function tick(e) {
+      //force.alpha(.01);
+      // console.log(e)
+        circle
+        .each(gravity(.2 * e.alpha))
+        .each(collide(.5))
+        .attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+    }
+
+    // Resolve collisions between nodes.
+    function collide(alpha) {
+      var quadtree = d3.geom.quadtree(nodes);
+      return function(d) {
+        var r = d.radius + maxRadius + padding,
+            nx1 = d.x - r,
+            nx2 = d.x + r,
+            ny1 = d.y - r,
+            ny2 = d.y + r;
+        quadtree.visit(function(quad, x1, y1, x2, y2) {
+          if (quad.point && (quad.point !== d)) {
+            var x = d.x - quad.point.x,
+                y = d.y - quad.point.y,
+                l = Math.sqrt(x * x + y * y),
+                r = d.radius + quad.point.radius + padding;
+            if (l < r) {
+              l = (l - r) / l * alpha;
+              d.x -= x *= l;
+              d.y -= y *= l;
+              quad.point.x += x;
+              quad.point.y += y;
+            }
+          }
+          return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+        });
+      };
+    }
+
+    //	Move nodes toward cluster focus.
+    function gravity(alpha) {
+      return function(d) {
+        d.y += (d.cy - d.y) * alpha;
+        d.x += (d.cx - d.x) * alpha;
+      };
+    }
+
+    </script>
+	</body>
+</html>
