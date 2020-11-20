@@ -1,0 +1,434 @@
+[
+  {
+    "city": "New York",
+    "state": "NY",
+    "latitude": 40.6976637,
+    "longitude": -74.1197639
+  },
+  {
+    "city": "Chicago",
+    "state": "IL",
+    "latitude": 41.8339037,
+    "longitude": -87.8720468
+  },
+  {
+    "city": "Los Angeles",
+    "state": "CA",
+    "latitude": 34.0207305,
+    "longitude": -118.6919153
+  },
+  {
+    "city": "Philadelphia",
+    "state": "PA",
+    "latitude": 40.0026767,
+    "longitude": -75.2581113
+  },
+  {
+    "city": "Phoenix",
+    "state": "AZ",
+    "latitude": 33.6056711,
+    "longitude": -112.4052339
+  },
+  {
+    "city": "Houston",
+    "state": "TX",
+    "latitude": 29.8174782,
+    "longitude": -95.6814756
+  },
+  {
+    "city": "San Francisco",
+    "state": "CA",
+    "latitude": 37.7577627,
+    "longitude": -122.4726194
+  },
+  {
+    "city": "Washington",
+    "state": "DC",
+    "latitude": 38.8937091,
+    "longitude": -77.0846157
+  },
+  {
+    "city": "Baltimore",
+    "state": "MD",
+    "latitude": 39.2848183,
+    "longitude": -76.6905364
+  },
+  {
+    "city": "Dallas",
+    "state": "TX",
+    "latitude": 32.8208751,
+    "longitude": -96.8716261
+  },
+  {
+    "city": "San Diego",
+    "state": "CA",
+    "latitude": 32.8248175,
+    "longitude": -117.3891616
+  },
+  {
+    "city": "Austin",
+    "state": "TX",
+    "latitude": 30.3079827,
+    "longitude": -97.8934852
+  },
+  {
+    "city": "Jacksonville",
+    "state": "FL",
+    "latitude": 30.3452116,
+    "longitude": -81.8231907
+  },
+  {
+    "city": "San Antonio",
+    "state": "TX",
+    "latitude": 29.4816561,
+    "longitude": -98.6544883
+  },
+  {
+    "city": "San Jose",
+    "state": "CA",
+    "latitude": 37.2970523,
+    "longitude": -121.9574962
+  },
+  {
+    "city": "Seattle",
+    "state": "WA",
+    "latitude": 47.6131746,
+    "longitude": -122.4821467
+  },
+  {
+    "city": "Fort Worth",
+    "state": "TX",
+    "latitude": 32.8010236,
+    "longitude": -97.4294026
+  },
+  {
+    "city": "Columbus",
+    "state": "OH",
+    "latitude": 39.961236,
+    "longitude": -83.0338136
+  },
+  {
+    "city": "Milwaukee",
+    "state": "WI",
+    "latitude": 43.0389599,
+    "longitude": -87.941493
+  },
+  {
+    "city": "Detroit",
+    "state": "MI",
+    "latitude": 42.3314851,
+    "longitude": -83.0807732
+  },
+  {
+    "city": "Honolulu",
+    "state": "HI",
+    "latitude": 21.306944,
+    "longitude": -157.858337
+  },
+  {
+    "city": "Charlotte",
+    "state": "NC",
+    "latitude": 35.227085,
+    "longitude": -80.843124
+  },
+  {
+    "city": "Indianapolis",
+    "state": "IN",
+    "latitude": 39.7799642,
+    "longitude": -86.272833
+  },
+  {
+    "city": "Miami",
+    "state": "FL",
+    "latitude": 25.7825453,
+    "longitude": -80.2994984
+  },
+  {
+    "city": "Denver",
+    "state": "CO",
+    "latitude": 39.7645187,
+    "longitude": -104.9951945
+  },
+  {
+    "city": "Memphis",
+    "state": "TN",
+    "latitude": 35.1293862,
+    "longitude": -90.1108704
+  },
+  {
+    "city": "Long Beach",
+    "state": "CA",
+    "latitude": 33.8003309,
+    "longitude": -118.2261493
+  },
+  {
+    "city": "Kansas City",
+    "state": "MO",
+    "latitude": 39.0921167,
+    "longitude": -94.8559004
+  },
+  {
+    "city": "Atlanta",
+    "state": "GA",
+    "latitude": 33.7678358,
+    "longitude": -84.4906438
+  },
+  {
+    "city": "Portland",
+    "state": "ME",
+    "latitude": 43.6671132,
+    "longitude": -70.2815544
+  },
+  {
+    "city": "Oklahoma City",
+    "state": "OK",
+    "latitude": 35.4828466,
+    "longitude": -97.6192809
+  },
+  {
+    "city": "Nashville",
+    "state": "TN",
+    "latitude": 36.186836,
+    "longitude": -86.9253288
+  },
+  {
+    "city": "Albuquerque",
+    "state": "NM",
+    "latitude": 35.0844511,
+    "longitude": -106.6854414
+  },
+  {
+    "city": "Newark",
+    "state": "NJ",
+    "latitude": 40.7313432,
+    "longitude": -74.2170748
+  },
+  {
+    "city": "Fresno",
+    "state": "CA",
+    "latitude": 36.7856504,
+    "longitude": -119.8646012
+  },
+  {
+    "city": "New Orleans",
+    "state": "LA",
+    "latitude": 30.0332195,
+    "longitude": -90.0226473
+  },
+  {
+    "city": "Mesa",
+    "state": "AZ",
+    "latitude": 33.3956236,
+    "longitude": -111.8077983
+  },
+  {
+    "city": "Minneapolis",
+    "state": "MN",
+    "latitude": 44.970797,
+    "longitude": -93.3315181
+  },
+  {
+    "city": "Tucson",
+    "state": "AZ",
+    "latitude": 32.1561235,
+    "longitude": -111.0238887
+  },
+  {
+    "city": "Louisville",
+    "state": "KY",
+    "latitude": 38.1889916,
+    "longitude": -85.8168537
+  },
+  {
+    "city": "Sacramento",
+    "state": "CA",
+    "latitude": 38.561919,
+    "longitude": -121.5829956
+  },
+  {
+    "city": "Tampa",
+    "state": "FL",
+    "latitude": 27.9947147,
+    "longitude": -82.5943644
+  },
+  {
+    "city": "Las Vegas",
+    "state": "NV",
+    "latitude": 36.1251958,
+    "longitude": -115.3150833
+  },
+  {
+    "city": "Omaha",
+    "state": "NE",
+    "latitude": 41.292032,
+    "longitude": -96.2213314
+  },
+  {
+    "city": "El Paso",
+    "state": "TX",
+    "latitude": 31.8113481,
+    "longitude": -106.5646011
+  },
+  {
+    "city": "St. Louis",
+    "state": "MO",
+    "latitude": 38.653285,
+    "longitude": -90.3835451
+  },
+  {
+    "city": "Colorado Springs",
+    "state": "CO",
+    "latitude": 38.875868,
+    "longitude": -104.8984426
+  },
+  {
+    "city": "Anchorage",
+    "state": "AK",
+    "latitude": 61.1083688,
+    "longitude": -150.0006825
+  },
+  {
+    "city": "Tulsa",
+    "state": "OK",
+    "latitude": 36.1524972,
+    "longitude": -96.0180938
+  },
+  {
+    "city": "Arlington",
+    "state": "TX",
+    "latitude": 32.701968,
+    "longitude": -97.2054529
+  },
+  {
+    "city": "Raleigh",
+    "state": "NC",
+    "latitude": 35.843965,
+    "longitude": -78.7851393
+  },
+  {
+    "city": "Virginia Beach",
+    "state": "VA",
+    "latitude": 36.7958623,
+    "longitude": -76.1527118
+  },
+  {
+    "city": "Bridgeport",
+    "state": "CT",
+    "latitude": 41.1848053,
+    "longitude": -73.2340258
+  },
+  {
+    "city": "Birmingham",
+    "state": "AL",
+    "latitude": 33.5314448,
+    "longitude": -86.9902205
+  },
+  {
+    "city": "Wichita",
+    "state": "KS",
+    "latitude": 37.6647979,
+    "longitude": -97.5837767
+  },
+  {
+    "city": "Providence",
+    "state": "RI",
+    "latitude": 41.8169448,
+    "longitude": -71.4561998
+  },
+  {
+    "city": "Salt Lake City",
+    "state": "UT",
+    "latitude": 40.7767168,
+    "longitude": -111.9905247
+  },
+  {
+    "city": "Little Rock",
+    "state": "AR",
+    "latitude": 34.724126,
+    "longitude": -92.4079673
+  },
+  {
+    "city": "Des Moines",
+    "state": "IA",
+    "latitude": 41.5667771,
+    "longitude": -93.6765556
+  },
+  {
+    "city": "Boise",
+    "state": "ID",
+    "latitude": 43.600909,
+    "longitude": -116.3039376
+  },
+  {
+    "city": "Wilmington",
+    "state": "DE",
+    "latitude": 39.7299627,
+    "longitude": -75.5645038
+  },
+  {
+    "city": "Charleston",
+    "state": "SC",
+    "latitude": 32.7765422,
+    "longitude": -79.9660706
+  },
+  {
+    "city": "Sioux Falls",
+    "state": "SD",
+    "latitude": 43.5460792,
+    "longitude": -96.7662844
+  },
+  {
+    "city": "Jackson",
+    "state": "MS",
+    "latitude": 32.298825,
+    "longitude": -90.2198297
+  },
+  {
+    "city": "Billings",
+    "state": "MT",
+    "latitude": 45.7833401,
+    "longitude": -108.5357097
+  },
+  {
+    "city": "Manchester",
+    "state": "NH",
+    "latitude": 42.9956971,
+    "longitude": -71.4898085
+  },
+  {
+    "city": "Fargo",
+    "state": "ND",
+    "latitude": 46.8772396,
+    "longitude": -96.8248227
+  },
+  {
+    "city": "Charleston",
+    "state": "WV",
+    "latitude": 38.3498816,
+    "longitude": -81.6676428
+  },
+  {
+    "city": "Burlington",
+    "state": "VT",
+    "latitude": 44.4759384,
+    "longitude": -73.2470914
+  },
+  {
+    "city": "Portland",
+    "state": "OR",
+    "latitude": 45.5426274,
+    "longitude": -122.7944094
+  },
+  {
+    "city": "Cheyenne",
+    "state": "WY",
+    "latitude": 41.1475918,
+    "longitude": -104.8024239
+  },
+  {
+    "city": "Boston",
+    "state": "MA",
+    "latitude": 42.3142647,
+    "longitude": -71.1103666
+  }
+ ]

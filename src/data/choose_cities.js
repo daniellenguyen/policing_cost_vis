@@ -1,6 +1,8 @@
 // Get the coordinate objects in us_cities.json matching the cities in us_cities_with_FID.
 // Write these coordinate objects to a new json file.
 
+// 11/17/2020 don't like us_cities.json anymore. inaccurate longitude/latitude for some cities
+
 const fs = require('fs')
 const us_cities = require('./us_cities.json')
 const us_cities_with_FID = require('./us_cities_with_FID.json')
