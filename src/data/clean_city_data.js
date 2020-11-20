@@ -48,7 +48,7 @@ const budgetToRadius = d3.scaleLinear()
 // TODO data tests in general
 // TODO how many circles are on the screen
 const cleaned_city_info = []
-const projection = d3.geoAlbers()
+const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
 
 us_cities_with_FID.map((city) => {
     const radius = budgetToRadius(city.Overall_Policing_Budget) // needed clean function
