@@ -1,4 +1,4 @@
-Index,FID,City,State,Overall Policing Budget,% of city funds spent on policing,city $ per resident for police,police department employee to resident ratio (1: number)
+Index,FID,City,State,Overall_Policing_Budget,percent_city_funds_spent_on_policing,city_money_per_resident_for_police,police_dept_employee_to_resident_ratio
 1,2174,New York,NY,"$11,036,298,140",8%,$626,162
 2,63,Chicago,IL,"$1,776,930,437",37%,$611,183
 3,415,Los Angeles,CA,"$1,735,493,169",33%,$420,308

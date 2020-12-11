@@ -1,0 +1,75 @@
+<!-- a sandbox to play around with different examples -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style type = "text/css">
+        body {
+          margin: 0;
+        }
+
+        .App {
+            text-align: center;
+            width: 100%;
+            height: 100vh;
+            display: inline-flex;
+        }
+
+        .App .left-column {
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+            height: 100%;
+        }
+
+        .App .right-column {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            height: 100%;
+        }
+
+        .App .left-column .map {
+            flex: 4 1 auto;
+            border: 1px solid blue;
+            width: 100%;
+            height: 100%;
+        }
+
+        .App .left-column .budget-comparison {
+            flex: 1 1 auto;
+            border: 1px solid green;
+            width: 100%;
+            height: 100%;
+        }
+
+        .App .right-column .money-per-resident {
+            flex: 1 1 auto;
+            border: 1px solid yellow;
+            width: 100%;
+            height: 100%;
+        }
+
+        .App .right-column .police-to-civilian-ratio {
+            flex: 4 1 auto;
+            border: 1px solid orange;
+            width: 100%;
+            height: 100%;
+        }
+      </style>
+    <title>flex layout sample</title>
+  </head>
+  <body>
+    <div class="App">
+      <div class="left-column">
+        <div class="map"></div>
+        <div class="budget-comparison"></div>
+      </div>
+      <div class="right-column">
+        <div class="money-per-resident"></div>
+        <div class="police-to-civilian-ratio"></div>
+      </div>
+    </div>
+  </body>
+</html>

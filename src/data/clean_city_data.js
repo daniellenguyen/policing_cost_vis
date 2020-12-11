@@ -2,8 +2,6 @@
 const d3 = require('d3')
 const fs = require('fs')
 const us_cities_with_FID = require('./us_cities_with_FID.json')
-// const chosen_us_cities_coordinates = require('./final_us_city_coordinates.json')
-// const all_us_cities_coordinates = require('./us_cities.json')
 const cities_coordinates = require('./cities_coordinates.json')
 
 const writeJsonToFile = (json, filename) => {
@@ -25,23 +23,6 @@ const clean = (value) => {
 const budgetToRadius = d3.scaleLinear()
     .domain([14493787, 11036298140]) // lowest to highest policing budget. 14 million to 1 billion
     .range([5, 100]) //log scale alternative button. explain scaling decision in a small blurb. scaling decision gets across that ny spends 10 times more than any other city
-
-// const coordinatesToFID = []
-// const allCities = all_us_cities_coordinates.features
-// chosen_us_cities_coordinates.map((point) => {
-//     // Finding FID manually because findIndex uses strict equality
-//     for (var i = 0; i < allCities.length; i++) {
-//         const coordinates = allCities[i].geometry?.coordinates
-//         const pathCoordinates = point.geometry?.coordinates
-//         if (coordinates[0] === pathCoordinates[0] 
-//             && coordinates[1] === pathCoordinates[1]) {
-//             coordinatesToFID.push({
-//                 "FID": i,
-//                 "coordinates": pathCoordinates
-//             })
-//         }
-//     }
-// })
 
 // TODO write test on whether FID coordinates matches city name
 // TODO tests on proper type for policing budget etc
@@ -68,7 +49,5 @@ us_cities_with_FID.map((city) => {
     cleaned_city_info.push(newCity)
     return null
 })
-
-console.log(cleaned_city_info)
 
 writeJsonToFile(cleaned_city_info, "us_cities_with_FID.json")

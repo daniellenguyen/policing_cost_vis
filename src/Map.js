@@ -5,16 +5,19 @@ import './App.css'
 import * as citiesData from './data/us_cities_with_FID.json'
 import statesOutline from './data/states_outline.json'
 
-const Map = () => {
+const Map = ({onMouseover, onMouseOut}) => {
 
     const d3Container = useRef(null)
-    const visWidth = 1100;
-    const visHeight = 900;
+    const visWidth = 100;
+    const visHeight = 100;
 
     useEffect(() => {
         const svgContainer = d3.select(d3Container.current).append("svg")
-            .attr("width", visWidth)
-            .attr("height", visHeight)
+            .attr("preserveAspectRatio", "xMidYMin meet")
+            .attr("viewBox", "0 0 1000 500")
+            .style("width", "100%")
+            .style("border", "1px solid red")
+            .classed("svg-content", true);
 
         // make city name show at top
         svgContainer.append("text")
@@ -38,29 +41,34 @@ const Map = () => {
             .enter()
             .append('circle')
             .attr("r", function(d) { return d.radius })
-            .attr("cx", function(d) { return d.cx }) // where are Anchorage and Honolulu?
+            .attr("cx", function(d) { return d.cx })
             .attr("cy", function(d) { return d.cy })
             .style("stroke", "blue")
-            .style("fill", "white")
+            .style("fill", "transparent")
             .on("mouseover", function(d, path) {
                 d3.select(this)
                 .style("stroke", "red")
-                .style("fill", "white")
 
-                d3.select('#state_placeholder').text(path.City + " " + path.cx + " " + path.cy)
-                console.log(path)
+                d3.select('#state_placeholder').text(JSON.stringify(path))
+                onMouseover(path.City)
               })
             .on("mouseout", function(d) {
                 d3.select(this).style("stroke", "blue").style("fill", "none")
+                onMouseOut()
             })
 
-        //     const simulation = d3.forceSimulation(citiesData.default)
-        //       .velocityDecay(0.2)
-        //       .force("charge", d3.forceManyBody().strength(5))
-        //       .force("center", d3.forceCenter(visWidth / 2, visHeight / 2))
-        //       .force("collide", d3.forceCollide().radius(d => d.radius).iterations(1))
-        //       .force("x", d3.forceX().x(function(d) { return d.cx }))
-        //       .force("y", d3.forceY().y(function(d) {return 0 }))
+
+            //ADD NYC ANCHORAGE AND HONOLULU BACK
+        // const simulation = d3.forceSimulation(citiesData.default)
+        //     // .velocityDecay(0.01)
+        //     // .force("cx", d3.forceX().x(d => visWidth / 2).strength(0.02))
+        //     // .force("cy", d3.forceY().y(d => visHeight / 2).strength(0.02))
+        //     .force("x", d3.forceX().x(d => d.cx + d.x).strength(0.3))
+        //     .force("y", d3.forceY().y(d => d.cy + d.y).strength(0.3))
+        //     // .force("charge", d3.forceManyBody().strength(-1))
+        //     // .force("center", d3.forceCenter(visWidth / 2, visHeight/2))
+        //     // .force("collide", d3.forceCollide().radius(d => d.radius + 1).strength(1))
+        //     // .stop()
         //       .on("tick", ticked);
 
         // function ticked() {
@@ -68,9 +76,7 @@ const Map = () => {
         //      .attr("cy", d => d.y);
         // }
 
-        // simulation.on("tick", ticked)
-
-    }, [])
+    }, [onMouseover, onMouseOut])
     
     return <div className="map" ref={d3Container}></div>
 }
