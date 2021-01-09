@@ -32,7 +32,7 @@ const cleaned_city_info = []
 const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
 
 us_cities_with_FID.map((city) => {
-    const radius = budgetToRadius(city.Overall_Policing_Budget) // needed clean function
+    const radius = budgetToRadius(clean(city.overall_policing_budget)) // needed clean function
     const coordinates = cities_coordinates.find((d) => { return d.city === city.City && d.state === city.State })
     const projectedCoordinates = projection([coordinates?.longitude, coordinates?.latitude])
     const newCity = {
@@ -42,9 +42,9 @@ us_cities_with_FID.map((city) => {
         "cy": projectedCoordinates[1],
         "latitude": coordinates?.latitude,
         "longitude": coordinates?.longitude,
-        "Overall_Policing_Budget": city.Overall_Policing_Budget, // needed clean function
-        "percent_city_funds_spent_on_policing": city.percent_city_funds_spent_on_policing, // needed clean function
-        "city_money_per_resident_for_police": city.city_money_per_resident_for_police, // needed clean function
+        "overall_policing_budget": clean(city.overall_policing_budget), // needed clean function
+        "percent_city_funds_spent_on_policing": clean(city.percent_city_funds_spent_on_policing), // needed clean function
+        "policing_budget_per_capita": clean(city.policing_budget_per_capita), // needed clean function
     }
     cleaned_city_info.push(newCity)
     return null

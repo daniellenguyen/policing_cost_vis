@@ -30,18 +30,3 @@
     flex: 4 1 auto;
     display: flex;
 }
-
-.left-column .budget-comparison {
-    flex: 1 1 auto;
-    display: flex;
-}
-
-.right-column .money-per-resident {
-    flex: 1 1 auto;
-    display: flex;
-}
-
-.right-column .police-to-civilian-ratio {
-    flex: 4 1 auto;
-    display: flex;
-}

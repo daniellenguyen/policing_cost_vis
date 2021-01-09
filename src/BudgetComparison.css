@@ -1,0 +1,15 @@
+.left-column .budget-comparison {
+    flex: 1 1 auto;
+    display: inline-flex;
+    border: 1px solid blue;
+}
+
+.left-column .budget-comparison .policing-budget {
+    height: 20px;
+    background-color: green;
+}
+
+.left-column .budget-comparison .other-budget {
+    height: 20px;
+    background-color: pink;
+}
