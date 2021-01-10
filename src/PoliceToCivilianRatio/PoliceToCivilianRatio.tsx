@@ -27,16 +27,30 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     ? `1 police officer for every ${ratio} people`
     : "";
 
-  const simulation = useRef<Simulation<SimulationNodeDatum, undefined>>()
-  const nodes = useRef<Selection<BaseType, { image: string; diameter: number; }, BaseType, unknown>>()
+  const simulation = useRef<Simulation<SimulationNodeDatum, undefined>>();
+  const nodes = useRef<
+    Selection<BaseType, { image: string; diameter: number }, BaseType, unknown>
+  >();
+
+  const ticked = (nodes: any) => {
+    nodes
+      .attr("x", (d: any) => (d as any).x)
+      .attr("y", (d: any) => (d as any).y);
+  };
 
   useEffect(() => {
+    if (
+      ratio &&
+      prevRatio &&
+      d3Container.current &&
+      simulation.current &&
+      nodes.current
+    ) {
 
-    if (ratio && prevRatio && d3Container.current && simulation.current && nodes.current) {
-      simulation.current.nodes(imageData.slice(0, ratio) as SimulationNodeDatum[]);
-      nodes.current = d3.select(".graph-container").selectAll("image").data(imageData.slice(0, ratio))
-      // must take police officer out of this selection
-      // also restart simulation here
+      nodes.current = d3
+        .select(".graph-container")
+        .selectAll("image")
+        .data(imageData.slice(0, ratio));
 
       if (ratio > prevRatio) {
         nodes.current
@@ -50,7 +64,8 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
           .attr("x", (d) => (d as any).x)
           .attr("y", (d) => (d as any).y)
           .attr("height", 50)
-          .attr("width", 50);
+          .attr("width", 50)
+
       } else if (ratio < prevRatio) {
         nodes.current
           .exit()
@@ -59,41 +74,90 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
           .attr("width", (d) => 0)
           .remove();
       }
-      simulation.current.alphaTarget(0.3).restart()
+
+      simulation.current
+      .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[]).alphaTarget(0.3).restart().on("tick", () => ticked(nodes.current))
+
+      nodes.current = d3
+      .select(".graph-container")
+      .selectAll("image")
+      .data(imageData.slice(0, ratio));
+
+    if (ratio > prevRatio) {
+      nodes.current
+        .enter()
+        .append("image")
+        .attr("height", (d) => 0)
+        .attr("width", (d) => 0)
+        .attr("transform", "translate(500, 800)")
+        .transition()
+        .attr("href", (d) => (d as any).image)
+        .attr("x", (d) => (d as any).x)
+        .attr("y", (d) => (d as any).y)
+        .attr("height", 50)
+        .attr("width", 50)
+
+    } else if (ratio < prevRatio) {
+      nodes.current
+        .exit()
+        .transition()
+        .attr("height", (d) => 0)
+        .attr("width", (d) => 0)
+        .remove();
+    }
+
+    simulation.current = d3
+    .forceSimulation(imageData.slice(0, ratio) as any)
+    .alphaTarget(0.3)
+    .velocityDecay(0.1)
+    .force("x", d3.forceX().strength(0.002))
+    .force("y", d3.forceY().strength(0.002))
+    .force(
+      "collision",
+      d3
+        .forceCollide()
+        .radius((d) => (d as any).diameter + 0.5)
+        .iterations(2)
+    );
+
+    simulation.current
+    .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[]).alphaTarget(0.3).restart().on("tick", () => ticked(nodes.current))
+
     }
   }, [ratio, prevRatio, simulation, nodes]);
 
   const initialGraph = () => {
-
     nodes.current = d3
-    .select(d3Container.current)
-    .select(".graph-container")
-    .selectAll("image")
-    .data(imageData.slice(0, ratio))
+      .select(d3Container.current)
+      .select(".graph-container")
+      .selectAll("image")
+      .data(imageData.slice(0, ratio));
 
-    simulation.current = d3
-      .forceSimulation(imageData as any)
-      .alphaTarget(0.3)
-      .velocityDecay(0.1)
-      .force("x", d3.forceX().strength(0.002))
-      .force("y", d3.forceY().strength(0.002))
-      .force("collision", d3.forceCollide().radius(d => (d as any).diameter + 0.5).iterations(2))
-
-    nodes.current.enter()
+    nodes.current
+      .enter()
       .append("image")
       .attr("href", (d) => (d as any).image)
       .attr("x", (d) => (d as any).x)
       .attr("y", (d) => (d as any).y)
       .attr("height", 50)
       .attr("width", 50)
-      .attr("transform", "translate(500, 800)");
+      .attr("transform", "translate(500, 800)")
 
-    const ticked = () => {
-      nodes.current?.attr("x", d => (d as any).x)
-      .attr("y", d => (d as any).y)
-    }
-    
-    simulation.current.on("tick", ticked);
+    simulation.current = d3
+      .forceSimulation(imageData.slice(0, ratio) as any)
+      .alphaTarget(0.3)
+      .velocityDecay(0.1)
+      .force("x", d3.forceX().strength(0.002))
+      .force("y", d3.forceY().strength(0.002))
+      .force(
+        "collision",
+        d3
+          .forceCollide()
+          .radius((d) => (d as any).diameter + 0.5)
+          .iterations(2)
+      );
+
+    simulation.current.on("tick", () => ticked(nodes.current));
 
     const drag = d3
       .drag()
@@ -104,7 +168,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       })
       .on("start", (event: any) => {
         if (!event.active && simulation.current) {
-          simulation.current.alphaTarget(0.3).restart()
+          simulation.current.alphaTarget(0.3).restart();
         }
       });
 
@@ -127,14 +191,6 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
         viewBox="0 0 1000 1000"
         className="graph-container"
       >
-        {/* <image
-          href="citizen_photos/officer.png"
-          x="0"
-          y="0"
-          height="200"
-          width="200"
-          className="officer"
-        ></image> */}
       </svg>
       {/* {selectedCity && <p className="message">{message}</p> } */}
     </div>
