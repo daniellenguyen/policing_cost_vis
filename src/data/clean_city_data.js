@@ -32,20 +32,25 @@ const cleaned_city_info = []
 const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
 
 us_cities_with_FID.map((city) => {
-    const radius = budgetToRadius(clean(city.overall_policing_budget)) // needed clean function
+    const radius = budgetToRadius(city.overall_policing_budget) // needed clean function, UNNECESSARY NOW because radius should be a constant
     const coordinates = cities_coordinates.find((d) => { return d.city === city.City && d.state === city.State })
     const projectedCoordinates = projection([coordinates?.longitude, coordinates?.latitude])
+    const projectedLabelCoordinates = projection([coordinates?.label_longitude, coordinates?.label_latitude])
+
     const newCity = {
         ...city, // includes police dept. employee to resident ratio
         "radius": radius,
         "cx": projectedCoordinates[0],
         "cy": projectedCoordinates[1],
+        "labelx": projectedLabelCoordinates[0],
+        "labely": projectedLabelCoordinates[1],
         "latitude": coordinates?.latitude,
         "longitude": coordinates?.longitude,
-        "overall_policing_budget": clean(city.overall_policing_budget), // needed clean function
-        "percent_city_funds_spent_on_policing": clean(city.percent_city_funds_spent_on_policing), // needed clean function
-        "policing_budget_per_capita": clean(city.policing_budget_per_capita), // needed clean function
+        "overall_policing_budget": city.overall_policing_budget, // needed clean function
+        "percent_city_funds_spent_on_policing": city.percent_city_funds_spent_on_policing, // needed clean function
+        "policing_budget_per_capita": city.policing_budget_per_capita, // needed clean function
     }
+
     cleaned_city_info.push(newCity)
     return null
 })

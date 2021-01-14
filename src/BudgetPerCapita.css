@@ -1,5 +1,9 @@
 .budget-per-capita {
-    flex: 1 1 auto;
-    display: flex;
+    display: inline;
     border: 1px solid yellow;
+}
+
+.budget-per-capita .hundred {
+    width: 125px;
+    height: 53px;
 }

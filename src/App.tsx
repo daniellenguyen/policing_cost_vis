@@ -13,11 +13,15 @@ export const App: React.FC = () => {
   const onMouseover = useCallback((newCity: City) => {
     setSelectedCity(newCity);
   }, []);
-  const locationName = selectedCity ? selectedCity?.City + ", " + selectedCity?.State : "Map of the States"
+  const locationName = selectedCity
+    ? selectedCity?.City + ", " + selectedCity?.State
+    : "Map of the States";
 
   return (
     <div className="App">
-      <h1>{locationName}</h1>
+      <div className="header">
+        <h1>{locationName}</h1>
+      </div>
       <div className="vis-body">
         <div className="left-column">
           <Map onMouseover={onMouseover} />
@@ -25,7 +29,7 @@ export const App: React.FC = () => {
         </div>
         <div className="right-column">
           <BudgetPerCapita selectedCity={selectedCity} />
-          <PoliceToCivilianRatio selectedCity={selectedCity} />
+          {/* <PoliceToCivilianRatio selectedCity={selectedCity} /> */}
         </div>
       </div>
     </div>

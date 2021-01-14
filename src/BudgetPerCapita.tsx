@@ -5,16 +5,30 @@ import { City } from "./City";
 export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
-
   if (!selectedCity) {
     return <div className="budget-per-capita">hello</div>;
   }
 
-  const budgetPerCapita = selectedCity.policing_budget_per_capita
-  const budgetMessage = `Every resident in this city spent $${budgetPerCapita} on policing in 2019`
+  const budgetPerCapita = selectedCity.policing_budget_per_capita;
+  const budgetMessage = `Every resident in this city spent $${budgetPerCapita} on policing in 2019`;
+
+  const addHundredDollarBills = () => {
+    const numberOfBills = Math.round(budgetPerCapita / 100);
+    return Array.from({ length: numberOfBills }, (v, k) => k + 1).map((n) => (
+      <img
+        className="hundred"
+        key={n}
+        alt="hundred-dollars"
+        src="hundred.jpeg"
+      ></img>
+    ));
+  };
 
   return (
-  <div className="budget-per-capita">{budgetMessage}</div>
+    <div className="budget-per-capita">
+      <p>{budgetMessage}</p>
+      {addHundredDollarBills()}
+    </div>
   );
 };
 
