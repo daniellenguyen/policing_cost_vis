@@ -29,7 +29,7 @@ export const App: React.FC = () => {
         </div>
         <div className="right-column">
           <BudgetPerCapita selectedCity={selectedCity} />
-          {/* <PoliceToCivilianRatio selectedCity={selectedCity} /> */}
+          <PoliceToCivilianRatio selectedCity={selectedCity} />
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ us_cities_with_FID.map((city) => {
 
     const newCity = {
         ...city, // includes police dept. employee to resident ratio
-        "radius": radius,
+        "radius": radius, // irrelevant now bc radius is constant
         "cx": projectedCoordinates[0],
         "cy": projectedCoordinates[1],
         "labelx": projectedLabelCoordinates[0],
