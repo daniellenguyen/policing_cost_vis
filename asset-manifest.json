@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/policing_cost_vis/static/css/main.dc3ef6fa.chunk.css",
+    "main.js": "/policing_cost_vis/static/js/main.f309e968.chunk.js",
+    "main.js.map": "/policing_cost_vis/static/js/main.f309e968.chunk.js.map",
+    "runtime-main.js": "/policing_cost_vis/static/js/runtime-main.08481e94.js",
+    "runtime-main.js.map": "/policing_cost_vis/static/js/runtime-main.08481e94.js.map",
+    "static/js/2.de5412fb.chunk.js": "/policing_cost_vis/static/js/2.de5412fb.chunk.js",
+    "static/js/2.de5412fb.chunk.js.map": "/policing_cost_vis/static/js/2.de5412fb.chunk.js.map",
+    "index.html": "/policing_cost_vis/index.html",
+    "precache-manifest.003563ec77e537dbb1e36381a433e499.js": "/policing_cost_vis/precache-manifest.003563ec77e537dbb1e36381a433e499.js",
+    "service-worker.js": "/policing_cost_vis/service-worker.js",
+    "static/css/main.dc3ef6fa.chunk.css.map": "/policing_cost_vis/static/css/main.dc3ef6fa.chunk.css.map",
+    "static/js/2.de5412fb.chunk.js.LICENSE.txt": "/policing_cost_vis/static/js/2.de5412fb.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08481e94.js",
+    "static/js/2.de5412fb.chunk.js",
+    "static/css/main.dc3ef6fa.chunk.css",
+    "static/js/main.f309e968.chunk.js"
+  ]
+}
