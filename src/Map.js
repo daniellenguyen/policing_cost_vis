@@ -21,7 +21,7 @@ const Map = ({ onMouseover }) => {
       .select(d3Container.current)
       .append("svg")
       .attr("preserveAspectRatio", "xMidYMid meet")
-      .attr("viewBox", "-62 70 1100 500")
+      .attr("viewBox", "-62 -30 1100 700")
       .style("width", "100%")
       .style("border", "1px solid red")
       .classed("svg-content", true);
@@ -76,6 +76,7 @@ const Map = ({ onMouseover }) => {
       .attr("y", (d) => d.labely - 3)
       .text((d) => d.City)
       .style("font", "14px arial")
+      .style("cursor", "pointer")
       .on("click", function (d, i) {
         cityNames.style("font", "12px arial").style("fill", "black")
 

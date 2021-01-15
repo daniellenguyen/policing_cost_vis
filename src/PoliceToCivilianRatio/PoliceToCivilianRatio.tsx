@@ -46,6 +46,38 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       simulation.current &&
       nodes.current
     ) {
+      nodes.current = d3
+        .select(".graph-container")
+        .selectAll("image")
+        .data(imageData.slice(0, ratio));
+
+      if (ratio > prevRatio) {
+        nodes.current
+          .enter()
+          .append("image")
+          .attr("height", (d) => 0)
+          .attr("width", (d) => 0)
+          .attr("transform", "translate(500, 800)")
+          .transition()
+          .attr("href", (d) => (d as any).image)
+          .attr("x", (d) => (d as any).x)
+          .attr("y", (d) => (d as any).y)
+          .attr("height", 50)
+          .attr("width", 50);
+      } else if (ratio < prevRatio) {
+        nodes.current
+          .exit()
+          .transition()
+          .attr("height", (d) => 0)
+          .attr("width", (d) => 0)
+          .remove();
+      }
+
+      simulation.current
+        .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[])
+        .alphaTarget(0.3)
+        .restart()
+        .on("tick", () => ticked(nodes.current));
 
       nodes.current = d3
         .select(".graph-container")
@@ -64,8 +96,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
           .attr("x", (d) => (d as any).x)
           .attr("y", (d) => (d as any).y)
           .attr("height", 50)
-          .attr("width", 50)
-
+          .attr("width", 50);
       } else if (ratio < prevRatio) {
         nodes.current
           .exit()
@@ -75,54 +106,25 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
           .remove();
       }
 
+      simulation.current = d3
+        .forceSimulation(imageData.slice(0, ratio) as any)
+        .alphaTarget(0.3)
+        .velocityDecay(0.1)
+        .force("x", d3.forceX().strength(0.002))
+        .force("y", d3.forceY().strength(0.002))
+        .force(
+          "collision",
+          d3
+            .forceCollide()
+            .radius((d) => (d as any).diameter + 0.5)
+            .iterations(2)
+        );
+
       simulation.current
-      .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[]).alphaTarget(0.3).restart().on("tick", () => ticked(nodes.current))
-
-      nodes.current = d3
-      .select(".graph-container")
-      .selectAll("image")
-      .data(imageData.slice(0, ratio));
-
-    if (ratio > prevRatio) {
-      nodes.current
-        .enter()
-        .append("image")
-        .attr("height", (d) => 0)
-        .attr("width", (d) => 0)
-        .attr("transform", "translate(500, 800)")
-        .transition()
-        .attr("href", (d) => (d as any).image)
-        .attr("x", (d) => (d as any).x)
-        .attr("y", (d) => (d as any).y)
-        .attr("height", 50)
-        .attr("width", 50)
-
-    } else if (ratio < prevRatio) {
-      nodes.current
-        .exit()
-        .transition()
-        .attr("height", (d) => 0)
-        .attr("width", (d) => 0)
-        .remove();
-    }
-
-    simulation.current = d3
-    .forceSimulation(imageData.slice(0, ratio) as any)
-    .alphaTarget(0.3)
-    .velocityDecay(0.1)
-    .force("x", d3.forceX().strength(0.002))
-    .force("y", d3.forceY().strength(0.002))
-    .force(
-      "collision",
-      d3
-        .forceCollide()
-        .radius((d) => (d as any).diameter + 0.5)
-        .iterations(2)
-    );
-
-    simulation.current
-    .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[]).alphaTarget(0.3).restart().on("tick", () => ticked(nodes.current))
-
+        .nodes(imageData.slice(0, ratio) as SimulationNodeDatum[])
+        .alphaTarget(0.3)
+        .restart()
+        .on("tick", () => ticked(nodes.current));
     }
   }, [ratio, prevRatio, simulation, nodes]);
 
@@ -141,41 +143,48 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       .attr("y", (d) => (d as any).y)
       .attr("height", 50)
       .attr("width", 50)
-      .attr("transform", "translate(500, 800)")
+      .attr("transform", "translate(500, 800)");
 
     simulation.current = d3
       .forceSimulation(imageData.slice(0, ratio) as any)
-      .alphaTarget(0.3)
       .velocityDecay(0.1)
       .force("x", d3.forceX().strength(0.002))
       .force("y", d3.forceY().strength(0.002))
+      .force("charge", d3.forceManyBody().strength(10))
+      .force("center", d3.forceCenter())
       .force(
         "collision",
         d3
           .forceCollide()
           .radius((d) => (d as any).diameter + 0.5)
           .iterations(2)
-      );
+      )
+      .on("tick", () => ticked(nodes.current));
 
-    simulation.current.on("tick", () => ticked(nodes.current));
-
-    const drag = d3
-      .drag()
-      .on("drag", function (this: any, event: DragEvent, d: any) {
-        d3.select(this)
-          .attr("x", (d.x = event.x))
-          .attr("y", (d.y = event.y));
-      })
+    const drag = d3.drag()
       .on("start", (event: any) => {
         if (!event.active && simulation.current) {
-          simulation.current.alphaTarget(0.3).restart();
+          simulation.current.alpha(0.3).restart();
         }
+      })
+      .on("drag", function (this: any, event: DragEvent, d: any) {
+        if (simulation.current) {
+          simulation.current.alpha(0.3).restart();
+        }
+        d3.select(this)
+          .attr("x", (d.x = event.x))
+          .attr("y", (d.y = event.y))
+          .style("cursor", "grabbing");
+      })
+      .on("end", function (this: any, event: any, d: any) {
+        d3.select(this).style("cursor", "pointer");
       });
 
     d3.select(d3Container.current)
       .select('[href="policing_cost_vis/citizen_photos/officer.png"]')
       .attr("height", 200)
       .attr("width", 200)
+      .style("cursor", "grab")
       .call(drag as any);
   };
 
@@ -186,13 +195,12 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
 
   return (
     <div className="police-to-civilian-ratio" ref={d3Container}>
+      {selectedCity && <p className="message">{message}</p> }
       <svg
         preserveAspectRatio="xMidYMin meet"
         viewBox="0 0 1000 1000"
         className="graph-container"
-      >
-      </svg>
-      {/* {selectedCity && <p className="message">{message}</p> } */}
+      ></svg>
     </div>
   );
 };
