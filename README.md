@@ -15,35 +15,20 @@ Also, before joining the coordinate data, convert it into pixel coordinates thro
 ### `cd src/data`
 ### `node clean_city_data.js`
 
+# How to deploy this on my github pages site:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+cd policing_cost_vis
+yarn run deploy
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+cd personal-website
+cd policing_cost_vis // the submodule inside the personal website repo
+git checkout origin/gh-pages // the branch used to deploy this page
+git pull
+cd ..
+git status
+git add policing_cost_vis // and also gitmodules if it's there
+git commit 
+git push origin master
 
 
 

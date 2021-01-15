@@ -173,7 +173,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       });
 
     d3.select(d3Container.current)
-      .select('[href="citizen_photos/officer.png"]')
+      .select('[href="policing_cost_vis/citizen_photos/officer.png"]')
       .attr("height", 200)
       .attr("width", 200)
       .call(drag as any);

@@ -11,19 +11,19 @@ const facesData = []
 const numberOfFaces =  100 // number of people scraped from thispersondoesnotexist.com
 
 // max # of faces to represent is 750 (Manchester, NH), so create an array of exactly that many
-facesData.push({ image: 'citizen_photos/officer.png', diameter: 250})
+facesData.push({ image: 'policing_cost_vis/citizen_photos/officer.png', diameter: 250})
 
 // 700
 for (var i = 0; i < 7; i++) {
     for (var j = 1; j <= numberOfFaces; j++) {
-        const face = { image: `citizen_photos/person${j}.png`, diameter: 30 }
+        const face = { image: `policing_cost_vis/citizen_photos/person${j}.png`, diameter: 30 }
         facesData.push(face)
     }
 }
 
 // 50
 for (var k = 1; k <= 50; k++) {
-    const face = { image: `citizen_photos/person${k}.png`, diameter: 30 }
+    const face = { image: `policing_cost_vis/citizen_photos/person${k}.png`, diameter: 30 }
     facesData.push(face)
 }
 

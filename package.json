@@ -1,5 +1,6 @@
 {
-  "name": "d3-test-10-20-2020",
+  "name": "policing_cost_vis",
+  "homepage": "https://daniellenguyen.github.io/policing_cost_vis",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "d3": "^6.2.0",
     "d3-drag": "^2.0.0",
     "d3-force-cluster": "^0.1.2",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-scripts": "3.4.3",
@@ -21,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
