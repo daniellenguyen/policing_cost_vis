@@ -27,11 +27,11 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
   const curvyArrowWidth = 900
   const curvyPathString = "M 0 " + (arrowHeight + 5) + 
   " H " + (curvyArrowWidth *0.6) + 
-  " C " + (curvyArrowWidth*0.9) + " " + (arrowHeight + 5) + " " + (curvyArrowWidth*0.9)+ " " + (arrowHeight + 270) + " " +  (curvyArrowWidth*0.9) + " " + (arrowHeight + 300) +
+  " C " + (curvyArrowWidth*0.9) + " " + (arrowHeight + 5) + " " + (curvyArrowWidth*0.9)+ " " + (arrowHeight + 120) + " " +  (curvyArrowWidth*0.9) + " " + (arrowHeight + 150) +
   // " L " + (curvyArrowWidth *0.6 + 200) + " " + (curvyArrowHeight*3.6) + // these two Ls are the arrow
   // " L " + (curvyArrowWidth *0.6 + 175) + " " + (curvyArrowHeight*5) +
-  " M " + (curvyArrowWidth*0.9 - curvyArrowHeight) + " " + (arrowHeight + 300) + // move to L directly above
-  " C " + (curvyArrowWidth*0.9 - curvyArrowHeight) + " " + (arrowHeight + 270) + " " + (curvyArrowWidth*0.9 - curvyArrowHeight)+ " " + (arrowHeight + curvyArrowHeight + 5) + " " + curvyArrowWidth*0.6 + " " + (arrowHeight + curvyArrowHeight + 5) +
+  " M " + (curvyArrowWidth*0.9 - curvyArrowHeight) + " " + (arrowHeight + 150) + // move to L directly above
+  " C " + (curvyArrowWidth*0.9 - curvyArrowHeight) + " " + (arrowHeight + 120) + " " + (curvyArrowWidth*0.9 - curvyArrowHeight)+ " " + (arrowHeight + curvyArrowHeight + 5) + " " + (curvyArrowWidth*0.6) + " " + (arrowHeight + curvyArrowHeight + 5) +
   " H 0"+
   " V " + (arrowHeight + 5)
 
