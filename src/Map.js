@@ -21,7 +21,7 @@ const Map = ({ onMouseover }) => {
       .select(d3Container.current)
       .append("svg")
       .attr("preserveAspectRatio", "xMidYMid meet")
-      .attr("viewBox", "-62 -30 1100 700")
+      .attr("viewBox", "-70 -30 1100 700")
       .style("width", "100%")
       .style("border", "1px solid red")
       .classed("svg-content", true);
@@ -48,6 +48,12 @@ const Map = ({ onMouseover }) => {
       .attr("cy", (d) => d.cy)
       .style("stroke", "#7df9ff") // electric blue
       .style("fill", "#7df9ff")
+      .on("mouseover", function (d, i) {
+        d3.select(this).style("stroke", "black")
+      })
+      .on("mouseout", function(d, i) {
+        d3.select(this).style("stroke", "#7df9ff")
+      })
       .on("click", function (d, i) {
         u.style("stroke", "#7df9ff").style("fill", "#7df9ff");
         d3.select(this)
@@ -77,6 +83,12 @@ const Map = ({ onMouseover }) => {
       .text((d) => d.City)
       .style("font", "14px arial")
       .style("cursor", "pointer")
+      .on("mouseover", function(d, i) {
+        d3.select(this).style("font-weight", "bold")
+      })
+      .on("mouseout", function(d, i) {
+        d3.select(this).style("font-weight", "normal")
+      })
       .on("click", function (d, i) {
         cityNames.style("font", "12px arial").style("fill", "black")
 

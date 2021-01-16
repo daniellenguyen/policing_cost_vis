@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import "./App.css";
 import Map from "./Map.js";
-import BudgetComparison from "./BudgetComparison";
+import BudgetComparison from "./BudgetComparison/BudgetComparison";
 import PoliceToCivilianRatio from "./PoliceToCivilianRatio/PoliceToCivilianRatio";
 import BudgetPerCapita from "./BudgetPerCapita";
 import { City } from "./City";

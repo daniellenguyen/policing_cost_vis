@@ -1,0 +1,58 @@
+.left-column .budget-comparison {
+  flex: 1 1 auto;
+  display: block;
+  border: 1px solid blue;
+  padding: 10px;
+  padding-top: 50px;
+}
+
+.left-column .budget-comparison .policing-budget-arrow {
+  width: 75%;
+  background-color: green;
+  position: relative;
+  /* background: red; */
+}
+
+/* .left-column .budget-comparison .policing-budget-arrow:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+} */
+.left-column .budget-comparison .policing-budget-arrow:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid red;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.left-column .budget-comparison .policing-budget-arrow .curve {
+  position: absolute;
+  overflow: hidden;
+}
+
+.left-column .budget-comparison .policing-budget-arrow .curve:before {
+  content: "";
+  position: absolute;
+}
+
+.left-column .budget-comparison .other-budget-arrow {
+  width: 75%;
+  background-color: pink;
+}
+
+.left-column .budget-comparison .other-budget-arrow::before {
+}
+
+.left-column .budget-comparison .other-budget-arrow::after {
+}
