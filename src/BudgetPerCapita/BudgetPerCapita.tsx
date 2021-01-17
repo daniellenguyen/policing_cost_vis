@@ -1,6 +1,6 @@
 import React from "react";
-import "./BudgetPerCapita.css";
-import { City } from "./City";
+import "./styles.css";
+import { City } from "../City";
 
 export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
   selectedCity,

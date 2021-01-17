@@ -3,7 +3,7 @@ import "./App.css";
 import Map from "./Map.js";
 import BudgetComparison from "./BudgetComparison/BudgetComparison";
 import PoliceToCivilianRatio from "./PoliceToCivilianRatio/PoliceToCivilianRatio";
-import BudgetPerCapita from "./BudgetPerCapita";
+import BudgetPerCapita from "./BudgetPerCapita/BudgetPerCapita";
 import { City } from "./City";
 
 export const App: React.FC = () => {
@@ -29,7 +29,7 @@ export const App: React.FC = () => {
         </div>
         <div className="right-column">
           <BudgetPerCapita selectedCity={selectedCity} />
-          <PoliceToCivilianRatio selectedCity={selectedCity} />
+          {/* <PoliceToCivilianRatio selectedCity={selectedCity} /> */}
         </div>
       </div>
     </div>
