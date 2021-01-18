@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import "./App.css";
-import Map from "./Map.js";
+import Map from "./Map/Map.js";
 import BudgetComparison from "./BudgetComparison/BudgetComparison";
 import PoliceToCivilianRatio from "./PoliceToCivilianRatio/PoliceToCivilianRatio";
 import BudgetPerCapita from "./BudgetPerCapita/BudgetPerCapita";
@@ -23,6 +23,9 @@ export const App: React.FC = () => {
         <h1>{locationName}</h1>
       </div>
       <div className="vis-body">
+        <Map onMouseover={onMouseover} />
+      </div>
+      {/* <div className="vis-body">
         <div className="left-column">
           <Map onMouseover={onMouseover} />
           <BudgetComparison selectedCity={selectedCity} />
@@ -31,7 +34,7 @@ export const App: React.FC = () => {
           <BudgetPerCapita selectedCity={selectedCity} />
           <PoliceToCivilianRatio selectedCity={selectedCity} />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
