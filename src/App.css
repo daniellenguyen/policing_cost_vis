@@ -20,7 +20,7 @@
 .vis-body {
     display: flex;
     width: 100%;
-    flex: 8 1 auto;
+    flex: 3 1 auto;
 }
 
 /* .left-column {

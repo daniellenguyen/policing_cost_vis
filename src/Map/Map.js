@@ -19,14 +19,6 @@ const Map = ({ onMouseover }) => {
 
   useEffect(() => {
     const svgContainer = d3.select(d3Container.current).select(".svg-content");
-    // .append("svg")
-    // .attr("preserveAspectRatio", "xMidYMid meet")
-    // .attr("viewBox", "-70 -30 1300 800") // 1100 700
-    // // .style("width", "80%")
-    // // .style("height", "80%")
-    // .style("border", "1px solid red")
-    // .classed("svg-content", true);
-
     const path = d3.geoPath();
 
     svgContainer
@@ -66,7 +58,8 @@ const Map = ({ onMouseover }) => {
       .on("click", function (d, i) {
         u.style("stroke", "#7df9ff").style("fill", "#7df9ff");
         d3.select(this) // complimentary to electric blue. see if colorblind safe
-        .style("stroke", "black");
+        .style("fill", "red")
+        .style("stroke", "none")
 
         cityNames.style("font", "12px arial").style("fill", "black");
         d3.select(d3Container.current)
@@ -108,7 +101,7 @@ const Map = ({ onMouseover }) => {
         d3.select(this).style("font-weight", "normal");
         d3.select(d3Container.current)
         .select(".circle-" + i.Index.toString())
-        .style("stroke", "#7df9ff");
+        .style("stroke", "none");
       })
       .on("click", function (d, i) {
         cityNames.style("font", "12px arial").style("fill", "black");
@@ -117,7 +110,8 @@ const Map = ({ onMouseover }) => {
         u.style("stroke", "#7df9ff").style("fill", "#7df9ff");
         d3.select(d3Container.current)
         .select(".circle-" + i.Index.toString())
-        .style("stroke", "black");
+        .style("fill", "red")
+        .style("stroke", "red");
 
         onMouseover(i);
       });
@@ -129,8 +123,11 @@ const Map = ({ onMouseover }) => {
     <div className="map" ref={d3Container}>
       <svg
         preserveAspectRatio="xMidYMid meet"
-        viewBox="-70 -30 1300 800"
+        viewBox="-70 -30 1100 650"
         className="svg-content"
+        height="100%"
+        width="100%"
+        // style={{border: "solid 1px red"}}
       ></svg>
     </div>
   );
