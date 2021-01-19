@@ -2,5 +2,12 @@
     height: 80%;
     width: 80%;
     margin: auto;
-    margin-top: 40px;
+    transition-property: width, height;
+    transition-duration: 0.5s;
+    margin-bottom: 40px;
+}
+
+.map.small-map {
+    height: 70%;
+    width: 70%;
 }

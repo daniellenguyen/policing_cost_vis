@@ -4,7 +4,6 @@ import * as topojson from "topojson";
 import "./styles.css";
 import citiesData from "../data/us_cities_with_FID.json";
 import statesOutline from "../data/states_outline.json";
-import { createJSDocThisTag, createTrue, transpileModule } from "typescript";
 
 // Had to slightly change long/lat manually for some cities so they wouldn't overlap.
 // Here are the original long/lat for those cities:
@@ -14,7 +13,7 @@ import { createJSDocThisTag, createTrue, transpileModule } from "typescript";
 // - New York latitutde 40.6976637
 // - New York longitude -74.1197639
 
-const Map = ({ onMouseover }) => {
+const Map = ({ onMouseover, selectedCity }) => {
   const d3Container = useRef(null);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const Map = ({ onMouseover }) => {
         "d",
         path(topojson.mesh(statesOutline, statesOutline.objects.states))
       )
-      .style("stroke", "black")
+      .style("stroke", "gray")
       .style("stroke-width", 0.5)
       .style("fill", "none");
 
@@ -40,7 +39,7 @@ const Map = ({ onMouseover }) => {
       .attr("r", 4)
       .attr("cx", (d) => d.cx)
       .attr("cy", (d) => d.cy)
-      .style("stroke", "#7df9ff") // electric blue
+      .style("stroke", "#7df9ff")
       .style("fill", "#7df9ff")
       .on("mouseover", function (d, i) {
         if (!this.classList.contains("clicked")) {
@@ -77,6 +76,8 @@ const Map = ({ onMouseover }) => {
         onMouseover(i);
       });
 
+    // Makes map labels draggable. 
+    // Used this to determine new coordinates for labels relative to their nodes.
     // let tempLabelCoordinates = {};
     // const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305]);
     // const drag = d3.drag().on("drag", function (event, d) {
@@ -110,7 +111,6 @@ const Map = ({ onMouseover }) => {
       })
       .on("mouseout", function (d, i) {
         if (!this.classList.contains("clicked")) {
-          // do we also need to check if other thing contains clicked?
           d3.select(this).style("font-weight", "normal");
           d3.select(d3Container.current)
             .select(".circle-" + i.Index.toString())
@@ -140,7 +140,7 @@ const Map = ({ onMouseover }) => {
   }, [onMouseover]);
 
   return (
-    <div className="map" ref={d3Container}>
+    <div className={selectedCity ? "map small-map" : "map"} ref={d3Container}>
       <svg
         preserveAspectRatio="xMidYMid meet"
         viewBox="-70 -30 1100 650"

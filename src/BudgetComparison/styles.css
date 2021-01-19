@@ -1,29 +1,35 @@
-.left-column .budget-comparison {
-  flex: 1 1 auto;
+.budget-comparison {
+  /* flex: 1 1 auto; */
   display: block;
   border: 1px solid blue;
-  padding: 10px;
-  padding-top: 50px;
+  height: 100%;
+  width: 100%;
 }
 
-.left-column .budget-comparison .policing-budget-arrow {
+.svg-arrows {
+    width: 100%;
+    height: 100%;
+    border: 1px solid green;
+}
+
+.budget-comparison .svg-arrows .policing-budget-arrow {
     fill: none;
     stroke: purple;
     stroke-width: 1px;
 }
 
-.left-column .budget-comparison .other-budget-arrow {
+.budget-comparison .svg-arrows .other-budget-arrow {
     fill: none;
     stroke: purple;
     stroke-width: 1px;
 }
 
-.left-column .budget-comparison .policing-budget-text {
+.budget-comparison .svg-arrows .policing-budget-text {
     font: italic 40px serif;
     fill: blue;
 }
 
-.left-column .budget-comparison .other-budget-text {
+.budget-comparison .svg-arrows .other-budget-text {
     font: italic 40px serif;
     fill: blue;
 }

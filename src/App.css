@@ -5,39 +5,38 @@
     display: flex;
     flex-direction: column;
 }
-/* 
-.vis-body {
-    display: flex;
-    width: 100%;
-    flex: 8 1 auto;
-} */
 
-.header {
-    display: flex;
-    flex: 1 1 auto;
+.location {
+    display: inline;
+    margin: 0;
+    font-size: 0px;
+    font-weight: normal;
+    transition-property: font-size;
+    transition-duration: 0.5s;
+    height: 10vh;
+    width: 100vw;
+}
+
+.location.selected {
+    font-size: 70px;
 }
 
 .vis-body {
-    display: flex;
+    display: block;
+    height: 90vh;
+    width: 100vw;
+}
+
+.vis-body .top-row {
+    height: 0;
     width: 100%;
-    flex: 3 1 auto;
+    transition-property: height, visibility;
+    transition-duration: 0.5s;
+    visibility: hidden;
+    border: 1px solid red;
 }
 
-/* .left-column {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-    height: 100%;
+.vis-body .top-row.selected {
+    visibility: visible;
+    height: 30%;
 }
-
-.right-column {
-    display: flex;
-    flex-direction: column;
-    width: 35%;
-    height: 100%;
-}
-
-.left-column .map {
-    flex: 1 1 auto;
-    display: flex;
-} */

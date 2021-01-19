@@ -19,11 +19,16 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <div className="header">
-        <h1>{locationName}</h1>
-      </div>
+      <h1 className={selectedCity ? "location selected" : "location"}>
+        {locationName}
+      </h1>
       <div className="vis-body">
-        <Map onMouseover={onMouseover} />
+        <div className={selectedCity ? "top-row selected" : "top-row"}>
+          <BudgetComparison selectedCity={selectedCity} />
+          {/* <BudgetPerCapita selectedCity={selectedCity} />
+          <PoliceToCivilianRatio selectedCity={selectedCity} /> */}
+        </div>
+        <Map onMouseover={onMouseover} selectedCity={selectedCity} />
       </div>
       {/* <div className="vis-body">
         <div className="left-column">
