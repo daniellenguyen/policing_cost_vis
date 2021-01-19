@@ -9,3 +9,10 @@
     width: 125px;
     height: 53px;
 }
+
+@media (max-width: 900px) {
+    .budget-per-capita {
+        width: 100%;
+        height: 33%;
+    }
+}

@@ -33,3 +33,10 @@
     font: italic 40px serif;
     fill: blue;
 }
+
+@media (max-width: 900px) {
+    .budget-comparison {
+        width: 100%;
+        height: 33%;
+    }
+}

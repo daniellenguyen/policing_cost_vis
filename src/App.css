@@ -1,43 +1,50 @@
 .App {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .location {
-    display: inline;
-    margin: 0;
-    font-size: 0px;
-    font-weight: normal;
-    transition-property: font-size;
-    transition-duration: 0.5s;
-    height: 10vh;
-    width: 100vw;
+  display: inline;
+  margin: 0;
+  font-size: 0px;
+  font-weight: normal;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  height: 10vh;
+  width: 100vw;
 }
 
 .location.selected {
-    font-size: 70px;
+  font-size: 70px;
 }
 
 .vis-body {
-    display: block;
-    height: 90vh;
-    width: 100vw;
+  display: block;
+  height: 90vh;
+  width: 100vw;
 }
 
 .vis-body .top-row {
-    height: 0;
-    width: 100%;
-    transition-property: height, visibility;
-    transition-duration: 0.5s;
-    visibility: hidden;
-    border: 1px solid red;
-    display: flex;
+  height: 0;
+  width: 100%;
+  transition-property: height, visibility;
+  transition-duration: 0.5s;
+  visibility: hidden;
+  border: 1px solid red;
+  display: flex;
 }
 
 .vis-body .top-row.selected {
-    visibility: visible;
-    height: 30%;
+  visibility: visible;
+  height: 30%;
+}
+
+@media (max-width: 900px) {
+  .vis-body .top-row.selected {
+    flex-direction: column;
+    height: 90%;
+  }
 }

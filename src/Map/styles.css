@@ -11,3 +11,10 @@
     height: 70%;
     width: 70%;
 }
+
+@media (max-width: 900px) {
+    .map.small-map {
+        height: 100%;
+        width: 100%;
+    }
+}

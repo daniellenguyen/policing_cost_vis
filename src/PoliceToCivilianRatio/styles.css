@@ -2,7 +2,6 @@
     display: inline-block;
     height: 100%;
     width: 33%;
-    flex-direction: column;
     border: 1px solid green;
 }
 
@@ -26,4 +25,11 @@
     height: 90%;
     width: 100%;
     border: 1px solid orange;
+}
+
+@media (max-width: 900px) {
+    .police-to-civilian-ratio {
+        width: 100%;
+        height: 33%;
+    }
 }

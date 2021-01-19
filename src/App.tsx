@@ -30,16 +30,6 @@ export const App: React.FC = () => {
         </div>
         <Map onMouseover={onMouseover} selectedCity={selectedCity} />
       </div>
-      {/* <div className="vis-body">
-        <div className="left-column">
-          <Map onMouseover={onMouseover} />
-          <BudgetComparison selectedCity={selectedCity} />
-        </div>
-        <div className="right-column">
-          <BudgetPerCapita selectedCity={selectedCity} />
-          <PoliceToCivilianRatio selectedCity={selectedCity} />
-        </div>
-      </div> */}
     </div>
   );
 };
