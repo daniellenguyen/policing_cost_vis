@@ -155,7 +155,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       <svg
         preserveAspectRatio="xMidYMin meet"
         // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox="0 0 1700 1700" 
+        viewBox="0 0 2500 2500" 
         className="graph-container"
       ></svg>
     </div>

@@ -1,6 +1,7 @@
 .police-to-civilian-ratio {
-    flex: 4 1 auto;
-    display: flex;
+    display: inline-block;
+    height: 100%;
+    width: 33%;
     flex-direction: column;
     border: 1px solid green;
 }
@@ -11,7 +12,8 @@
 }
 
 .police-to-civilian-ratio .message {
-    height: 20px;
+    height: 10%;
+    margin: 0;
 }
 
 .police-to-civilian-ratio .civilian-img {
@@ -21,4 +23,7 @@
 
 .police-to-civilian-ratio .graph-container {
     overflow: visible;
+    height: 90%;
+    width: 100%;
+    border: 1px solid orange;
 }

@@ -73,7 +73,7 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
   return (
     <div className="budget-comparison">
       {policingBudget && percentPolicingBudget && (
-        <svg viewBox="0 0 5000 5000" className="svg-arrows">
+        <svg viewBox="0 0 1500 1500" className="svg-arrows">
           <text 
             className="other-budget-text" 
             x="0" 

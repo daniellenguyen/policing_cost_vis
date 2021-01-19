@@ -25,8 +25,8 @@ export const App: React.FC = () => {
       <div className="vis-body">
         <div className={selectedCity ? "top-row selected" : "top-row"}>
           <BudgetComparison selectedCity={selectedCity} />
-          {/* <BudgetPerCapita selectedCity={selectedCity} />
-          <PoliceToCivilianRatio selectedCity={selectedCity} /> */}
+          <BudgetPerCapita selectedCity={selectedCity} />
+          <PoliceToCivilianRatio selectedCity={selectedCity} />
         </div>
         <Map onMouseover={onMouseover} selectedCity={selectedCity} />
       </div>
