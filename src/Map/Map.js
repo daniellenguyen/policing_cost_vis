@@ -4,7 +4,7 @@ import * as topojson from "topojson";
 import "./styles.css";
 import citiesData from "../data/us_cities_with_FID.json";
 import statesOutline from "../data/states_outline.json";
-import { createTrue, transpileModule } from "typescript";
+import { createJSDocThisTag, createTrue, transpileModule } from "typescript";
 
 // Had to slightly change long/lat manually for some cities so they wouldn't overlap.
 // Here are the original long/lat for those cities:
@@ -31,7 +31,7 @@ const Map = ({ onMouseover }) => {
       .style("stroke-width", 0.5)
       .style("fill", "none");
 
-    const u = svgContainer
+    const nodes = svgContainer
       .selectAll("circle")
       .data(citiesData)
       .enter()
@@ -43,28 +43,36 @@ const Map = ({ onMouseover }) => {
       .style("stroke", "#7df9ff") // electric blue
       .style("fill", "#7df9ff")
       .on("mouseover", function (d, i) {
-        d3.select(this).style("stroke", "black");
-        d3.select(d3Container.current)
-          .select(".text-" + i.Index.toString())
-          .style("font-weight", "bold");
+        if (!this.classList.contains("clicked")) {
+          d3.select(this).style("stroke", "black");
+          d3.select(d3Container.current)
+            .select(".text-" + i.Index.toString())
+            .style("font-weight", "bold");
+        }
       })
       .on("mouseout", function (d, i) {
-        d3.select(this).style("stroke", "#7df9ff");
-        console.log(i)
-        d3.select(d3Container.current)
-        .select(".text-" + i.Index.toString())
-        .style("font-weight", "normal");
+        if (!this.classList.contains("clicked")) {
+          d3.select(this).style("stroke", "#7df9ff");
+          d3.select(d3Container.current)
+            .select(".text-" + i.Index.toString())
+            .style("font-weight", "normal");
+        }
       })
       .on("click", function (d, i) {
-        u.style("stroke", "#7df9ff").style("fill", "#7df9ff");
-        d3.select(this) // complimentary to electric blue. see if colorblind safe
-        .style("fill", "red")
-        .style("stroke", "none")
-
-        cityNames.style("font", "12px arial").style("fill", "black");
+        nodes
+          .attr("class", (d) => "circle-" + d.Index.toString())
+          .style("stroke", "#7df9ff");
+        cityNames
+          .attr("class", (d) => "text-" + d.Index.toString())
+          .style("font-weight", "normal");
+        
         d3.select(d3Container.current)
-        .select(".text-" + i.Index.toString())
-        .style("font", "italic 40px serif").style("fill", "red");
+          .select(".text-" + i.Index.toString())
+          .attr("class", "clicked")
+          .style("font-weight", "bold");
+        d3.select(this)
+          .attr("class", "clicked")
+          .style("stroke", "black");
 
         onMouseover(i);
       });
@@ -92,26 +100,37 @@ const Map = ({ onMouseover }) => {
       .style("font", "14px arial")
       .style("cursor", "pointer")
       .on("mouseover", function (d, i) {
-        d3.select(this).style("font-weight", "bold");
-        d3.select(d3Container.current)
-        .select(".circle-" + i.Index.toString())
-        .style("stroke", "black");
+        if (!this.classList.contains("clicked")) {
+          d3.select(this).style("font-weight", "bold");
+          d3.select(d3Container.current)
+            .select(".circle-" + i.Index.toString())
+            .style("stroke", "black");
+        }
       })
       .on("mouseout", function (d, i) {
-        d3.select(this).style("font-weight", "normal");
-        d3.select(d3Container.current)
-        .select(".circle-" + i.Index.toString())
-        .style("stroke", "none");
+        if (!this.classList.contains("clicked")) {
+          // do we also need to check if other thing contains clicked?
+          d3.select(this).style("font-weight", "normal");
+          d3.select(d3Container.current)
+            .select(".circle-" + i.Index.toString())
+            .style("stroke", "none");
+        }
       })
       .on("click", function (d, i) {
-        cityNames.style("font", "12px arial").style("fill", "black");
-        d3.select(this).style("font", "italic 40px serif").style("fill", "red");
-
-        u.style("stroke", "#7df9ff").style("fill", "#7df9ff");
+        cityNames
+          .attr("class", (d) => "text-" + d.Index.toString())
+          .style("font-weight", "normal");
+        nodes
+          .attr("class", d => "circle-" + d.Index.toString())
+          .style("stroke", "#7df9ff");
+      
         d3.select(d3Container.current)
-        .select(".circle-" + i.Index.toString())
-        .style("fill", "red")
-        .style("stroke", "red");
+          .select(".circle-" + i.Index.toString())
+          .attr("class", "clicked")
+          .style("stroke", "black");
+        d3.select(this)
+          .attr("class", "clicked")
+          .style("font-weight", "bold");
 
         onMouseover(i);
       });
@@ -127,7 +146,6 @@ const Map = ({ onMouseover }) => {
         className="svg-content"
         height="100%"
         width="100%"
-        // style={{border: "solid 1px red"}}
       ></svg>
     </div>
   );

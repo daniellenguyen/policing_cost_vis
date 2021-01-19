@@ -20,8 +20,8 @@
     "state": "CA",
     "latitude": 34.0207305,
     "longitude": -118.6919153,
-    "label_latitude": 32.487454398088516,
-    "label_longitude": -122.88789245544352
+    "label_latitude": 33.087454398088516,
+    "label_longitude": -123.18789245544352
   },
   {
     "city": "Philadelphia",
@@ -52,8 +52,8 @@
     "state": "CA",
     "latitude": 37.7577627,
     "longitude": -122.4726194,
-    "label_latitude": 36.05788132307823,
-    "label_longitude": -127.52808395473016
+    "label_latitude": 36.40788132307823,
+    "label_longitude": -127.85808395473016
   },
   {
     "city": "Washington",
@@ -132,7 +132,7 @@
     "state": "TX",
     "latitude": 32.8010236,
     "longitude": -97.6394026,
-    "label_latitude": 32.711550569704045,
+    "label_latitude": 32.811550569704045,
     "label_longitude": -101.43659459493297
   },
   {
@@ -156,8 +156,8 @@
     "state": "MI",
     "latitude": 42.3314851,
     "longitude": -83.0807732,
-    "label_latitude": 42.03253439644164,
-    "label_longitude": -86.06150876968714
+    "label_latitude": 41.93253439644164,
+    "label_longitude": -86.26150876968714
   },
   {
     "city": "Honolulu",
@@ -269,7 +269,7 @@
     "latitude": 40.5313432,
     "longitude": -74.2170748,
     "label_latitude": 40.7323217521428,
-    "label_longitude": -77.40497432056867
+    "label_longitude": -77.60497432056867
   },
   {
     "city": "Fresno",
@@ -429,7 +429,7 @@
     "latitude": 33.5314448,
     "longitude": -86.9902205,
     "label_latitude": 33.89760526497655,
-    "label_longitude": -89.12234193696183
+    "label_longitude": -89.32234193696183
   },
   {
     "city": "Wichita",
@@ -484,8 +484,8 @@
     "state": "DE",
     "latitude": 39.7299627,
     "longitude": -75.5645038,
-    "label_latitude": 40.144529603417006,
-    "label_longitude": -80.00339477238661
+    "label_latitude": 40.244529603417006,
+    "label_longitude": -80.35339477238661
   },
   {
     "city": "Charleston",
@@ -524,8 +524,8 @@
     "state": "NH",
     "latitude": 42.9956971,
     "longitude": -71.4898085,
-    "label_latitude": 43.737701675941594,
-    "label_longitude": -76.17918252266085
+    "label_latitude": 43.837701675941594,
+    "label_longitude": -76.37918252266085
   },
   {
     "city": "Fargo",
