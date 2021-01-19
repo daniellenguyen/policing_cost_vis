@@ -97,6 +97,7 @@ const Map = ({ onMouseover }) => {
       .attr("x", (d) => d.labelx + 3)
       .attr("y", (d) => d.labely - 3)
       .text((d) => d.City)
+      .style("user-select", "none")
       .style("font", "14px arial")
       .style("cursor", "pointer")
       .on("mouseover", function (d, i) {
