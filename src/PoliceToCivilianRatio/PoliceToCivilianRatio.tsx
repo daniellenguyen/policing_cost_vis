@@ -28,10 +28,15 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     Selection<BaseType, { image: string; diameter: number }, BaseType, unknown>
   >();
   const simulation = useRef<Simulation<SimulationNodeDatum, undefined>>();
+  // const parent = document.getElementById("police-to-civilian-ratio")
+  // const parentWidth = parent?.clientWidth as number// make sure this value changes when screen resizes. add resize event listener
+  // const parentHeight = parent?.clientHeight as number * 10
   const ticked = (nodes: any) => {
     nodes
-      .attr("x", (d: any) => (d as any).x)
+      .attr("x", (d: any) => (d as any).x)  //[radius, width - radius] for x, [radius, height - radius] for y
       .attr("y", (d: any) => (d as any).y);
+      // .attr("x", (d: any) => Math.max(d.diameter, Math.min(parentWidth - d.diameter, d.x)))
+      // .attr("y", (d: any) => Math.max(d.diameter, Math.min(parentHeight - d.diameter, d.y)))
   };
 
   useEffect(() => {
@@ -52,8 +57,8 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
             nodes.current
               .enter()
               .append("image")
-              .attr("height", (d) => 0)
-              .attr("width", (d) => 0)
+              .attr("height", 0)
+              .attr("width", 0)
               .attr("transform", "translate(500, 800)")
               .transition()
               .attr("href", (d) => (d as any).image)
@@ -96,7 +101,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       .attr("x", (d) => (d as any).x)
       .attr("y", (d) => (d as any).y)
       .attr("height", 50)
-      .attr("width", 50)
+      .attr("width", 50) // shouldn't it have to do with diameter too?
       .attr("transform", "translate(500, 800)");
 
     simulation.current = d3
@@ -104,8 +109,8 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       .velocityDecay(0.1)
       .alphaDecay(0.1)
       .alpha(1)
-      .force("x", d3.forceX().strength(0.02))
-      .force("y", d3.forceY().strength(0.02))
+      .force("x", d3.forceX().strength(0.01))
+      .force("y", d3.forceY().strength(0.06))
       .force(
         "collision",
         d3
@@ -119,21 +124,22 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     const drag = d3
       .drag()
       .on("start", (event: any) => {
-        if (!event.active && simulation.current) {
-          simulation.current.alpha(0.4).restart();
-        }
+        // if (simulation.current) {
+          simulation.current?.alpha(0.4).restart();
+        // }
       })
       .on("drag", function (this: any, event: DragEvent, d: any) {
-        if (simulation.current) {
-          simulation.current.alpha(0.4).restart();
-        }
+        // if (simulation.current) {
+
+          simulation.current?.alpha(0.4).restart();
+        // }
         d3.select(this)
           .attr("x", (d.x = event.x))
           .attr("y", (d.y = event.y))
           .style("cursor", "grabbing");
       })
       .on("end", function (this: any, event: any, d: any) {
-        d3.select(this).style("cursor", "pointer");
+        d3.select(this).style("cursor", "grab")
       });
 
     d3.select(d3Container.current)
@@ -151,12 +157,12 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   }
 
   return (
-    <div className="police-to-civilian-ratio" ref={d3Container}>
+    <div className="police-to-civilian-ratio" id="police-to-civilian-ratio" ref={d3Container}>
       {selectedCity && <p className="message">{message}</p>}
       <svg
         preserveAspectRatio="xMidYMin meet"
         // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox="0 200 900 900" 
+        viewBox="-100 100 850 850" 
         className="graph-container"
       ></svg>
     </div>

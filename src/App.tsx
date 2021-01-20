@@ -19,16 +19,33 @@ export const App: React.FC = () => {
 
   return (
     <div className="App">
-      <h1 className={selectedCity ? "location selected" : "location"}>
-        {locationName}
-      </h1>
-      <div className="vis-body">
-        <div className={selectedCity ? "top-row selected" : "top-row"}>
-          <BudgetComparison selectedCity={selectedCity} />
-          <BudgetPerCapita selectedCity={selectedCity} />
-          <PoliceToCivilianRatio selectedCity={selectedCity} />
+      <div className="title">
+        <img
+          className="title-image"
+          alt="title with people mosaic"
+          src="policing_cost_vis/title-image.png"
+        />
+        <div className="title-card">
+          <img
+            className="officer"
+            alt="police officer icon"
+            src="policing_cost_vis/officer-large.png"
+          ></img>
+          <h1 className="title-text">The Cost of Policing in America</h1>
         </div>
-        <Map onMouseover={onMouseover} selectedCity={selectedCity} />
+      </div>
+      <div className="visualization">
+        <h1 className={selectedCity ? "location selected" : "location"}>
+          {locationName}
+        </h1>
+        <div className="vis-body">
+          <div className={selectedCity ? "top-row selected" : "top-row"}>
+            <BudgetComparison selectedCity={selectedCity} />
+            <BudgetPerCapita selectedCity={selectedCity} />
+            <PoliceToCivilianRatio selectedCity={selectedCity} />
+          </div>
+          <Map onMouseover={onMouseover} selectedCity={selectedCity} />
+        </div>
       </div>
     </div>
   );
