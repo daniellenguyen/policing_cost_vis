@@ -34,6 +34,25 @@ export const App: React.FC = () => {
           <h1 className="title-text">The Cost of Policing in America</h1>
         </div>
       </div>
+      <p className="explanation">
+        This is an interactive exploration of how various cities in the U.S.
+        fund their local police forces. The data behind it was compiled by
+        the&nbsp;
+        <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities">
+          Vera Institute of Justice
+        </a>
+        , which gathered it from datasets made public by each city's government.
+        <br />
+        <br />
+        With the exception of the policeman, which is a stock image, none of the
+        photos shown in this visualization are of real people. They were
+        generated using&nbsp;
+        <a href="https://thispersondoesnotexist.com">
+          thispersondoesnotexist.com.
+        </a>{" "}
+        It has the advantage of not requiring anyone's consent, but the
+        disadvantage of not being trained on a very racially diverse dataset.{" "}
+      </p>
       <div className="visualization">
         <h1 className={selectedCity ? "location selected" : "location"}>
           {locationName}
