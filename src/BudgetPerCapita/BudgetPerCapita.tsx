@@ -19,7 +19,7 @@ export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
         className="hundred"
         key={n}
         alt="hundred-dollars"
-        src="policing_cost_vis/hundred.jpeg"
+        src="/policing_cost_vis/hundred.jpeg"
       ></img>
     ));
   };
