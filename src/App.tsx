@@ -23,13 +23,13 @@ export const App: React.FC = () => {
         <img
           className="title-image"
           alt="title with people mosaic"
-          src="policing_cost_vis/title-image.png"
+          src="/policing_cost_vis/title-image.png"
         />
         <div className="title-card">
           <img
             className="officer"
             alt="police officer icon"
-            src="policing_cost_vis/officer-large.png"
+            src="/policing_cost_vis/officer-large.png"
           ></img>
           <h1 className="title-text">The Cost of Policing in America</h1>
         </div>
@@ -48,10 +48,11 @@ export const App: React.FC = () => {
         photos shown in this visualization are of real people. They were
         generated using&nbsp;
         <a href="https://thispersondoesnotexist.com">
-          thispersondoesnotexist.com.
-        </a>{" "}
-        It has the advantage of not requiring anyone's consent, but the
-        disadvantage of not being trained on a very racially diverse dataset.{" "}
+          thispersondoesnotexist.com
+        </a>
+        .&nbsp;The advantage here is that no one's consent is required, but the
+        disadvantage is that this particular model was not trained on a very
+        racially diverse dataset.
       </p>
       <div className="visualization">
         <h1 className={selectedCity ? "location selected" : "location"}>

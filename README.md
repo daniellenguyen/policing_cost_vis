@@ -17,18 +17,19 @@ Also, before joining the coordinate data, convert it into pixel coordinates thro
 
 # How to deploy this on my github pages site:
 
+```
 cd policing_cost_vis
 yarn run deploy
 
 cd personal-website
 cd policing_cost_vis // the submodule inside the personal website repo
-git checkout origin/gh-pages // the branch used to deploy this page
+git checkout gh-pages // the branch used to deploy this page
 git pull
 cd ..
 git status
 git add policing_cost_vis // and also gitmodules if it's there
 git commit 
 git push origin master
-
+```
 
 
