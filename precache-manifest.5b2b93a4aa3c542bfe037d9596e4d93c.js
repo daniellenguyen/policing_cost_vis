@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d9babb3ea712eb917cb48dd1df4c5d59",
+    "revision": "72b0a1cb75c872dbe0ffe1795dc7ff65",
     "url": "/policing_cost_vis/index.html"
   },
   {
-    "revision": "1625475a2ccc9e0e64a7",
+    "revision": "85fabaee50269c6bde18",
     "url": "/policing_cost_vis/static/css/main.498d68d9.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/policing_cost_vis/static/js/2.5d3c72df.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1625475a2ccc9e0e64a7",
-    "url": "/policing_cost_vis/static/js/main.813215d8.chunk.js"
+    "revision": "85fabaee50269c6bde18",
+    "url": "/policing_cost_vis/static/js/main.7ed81fef.chunk.js"
   },
   {
     "revision": "d20dbad79397d95f55ca",
