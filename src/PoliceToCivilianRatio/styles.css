@@ -1,8 +1,18 @@
 .police-to-civilian-ratio {
-    display: inline-block;
-    height: 100%;
-    width: 46%;
-    border: 1px solid green;
+    height: 0%;
+    width: 0%;
+    transition-property: height, width, visibility;
+    transition-duration: 0.5s;
+    visibility: hidden;
+    /* border: 1px solid red; */
+    display: block;
+    /* border: 1px solid green; */
+}
+
+.police-to-civilian-ratio.selected {
+    visibility: visible;
+    width: 30%;
+    height: 100%
 }
 
 .police-to-civilian-ratio .svg-content {
@@ -24,7 +34,7 @@
     overflow: visible;
     height: 90%;
     width: 100%;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 
 @media (max-width: 900px) {

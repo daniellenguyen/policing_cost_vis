@@ -16,6 +16,7 @@ function usePrevious<T>(value: T): T | undefined {
 export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
+
   const ratio =
     (selectedCity?.police_dept_employee_to_resident_ratio as number) + 1; // extra 1 for the police officer node
   const prevRatio = usePrevious(ratio);
@@ -109,8 +110,8 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       .velocityDecay(0.1)
       .alphaDecay(0.1)
       .alpha(1)
-      .force("x", d3.forceX().strength(0.01))
-      .force("y", d3.forceY().strength(0.06))
+      .force("x", d3.forceX().strength(0.04))
+      .force("y", d3.forceY().strength(0.02))
       .force(
         "collision",
         d3
@@ -143,7 +144,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       });
 
     d3.select(d3Container.current)
-      .select('[href="policing_cost_vis/citizen_photos/officer.png"]')
+      .select('[href="/policing_cost_vis/officer-large.png"]')
       .attr("height", 200)
       .attr("width", 200)
       .attr("transform", "translate(425, 725)")
@@ -157,12 +158,12 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   }
 
   return (
-    <div className="police-to-civilian-ratio" id="police-to-civilian-ratio" ref={d3Container}>
+    <div className={selectedCity? "police-to-civilian-ratio selected" : "police-to-civilian-ratio"} id="police-to-civilian-ratio" ref={d3Container}>
       {selectedCity && <p className="message">{message}</p>}
       <svg
         preserveAspectRatio="xMidYMin meet"
         // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox="-100 100 850 850" 
+        viewBox="0 -200 1500 1500" 
         className="graph-container"
       ></svg>
     </div>

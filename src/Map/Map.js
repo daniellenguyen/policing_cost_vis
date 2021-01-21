@@ -39,38 +39,40 @@ const Map = ({ onMouseover, selectedCity }) => {
       .attr("r", 4)
       .attr("cx", (d) => d.cx)
       .attr("cy", (d) => d.cy)
-      .style("stroke", "#7df9ff")
-      .style("fill", "#7df9ff")
+      .style("stroke", "#007a7a")
+      .style("fill", "#007a7a")
       .on("mouseover", function (d, i) {
         if (!this.classList.contains("clicked")) {
-          d3.select(this).style("stroke", "black");
+          d3.select(this).style("fill", "#BD5800").style("stroke", "black");
           d3.select(d3Container.current)
             .select(".text-" + i.Index.toString())
-            .style("font-weight", "bold");
+            .style("fill", "#BD5800");
         }
       })
       .on("mouseout", function (d, i) {
         if (!this.classList.contains("clicked")) {
-          d3.select(this).style("stroke", "#7df9ff");
+          d3.select(this).style("fill", "#007a7a").style("stroke", "none");
           d3.select(d3Container.current)
             .select(".text-" + i.Index.toString())
-            .style("font-weight", "normal");
+            .style("fill", "black");
         }
       })
       .on("click", function (d, i) {
         nodes
           .attr("class", (d) => "circle-" + d.Index.toString())
-          .style("stroke", "#7df9ff");
+          .style("fill", "#007a7a")
+          .style("stroke", "#007a7a");
         cityNames
           .attr("class", (d) => "text-" + d.Index.toString())
-          .style("font-weight", "normal");
+          .style("fill", "black");
         
         d3.select(d3Container.current)
           .select(".text-" + i.Index.toString())
           .attr("class", "clicked")
-          .style("font-weight", "bold");
+          .style("fill", "#BD5800");
         d3.select(this)
           .attr("class", "clicked")
+          .style("fill", "#BD5800")
           .style("stroke", "black");
 
         onMouseover(i);
@@ -99,39 +101,43 @@ const Map = ({ onMouseover, selectedCity }) => {
       .attr("y", (d) => d.labely - 3)
       .text((d) => d.City)
       .style("user-select", "none")
-      .style("font", "14px arial")
+      .style("font", "14px futura")
       .style("cursor", "pointer")
       .on("mouseover", function (d, i) {
         if (!this.classList.contains("clicked")) {
-          d3.select(this).style("font-weight", "bold");
+          d3.select(this).style("fill", "#BD5800");
           d3.select(d3Container.current)
             .select(".circle-" + i.Index.toString())
+            .style("fill", "#BD5800")
             .style("stroke", "black");
         }
       })
       .on("mouseout", function (d, i) {
         if (!this.classList.contains("clicked")) {
-          d3.select(this).style("font-weight", "normal");
+          d3.select(this).style("fill", "black");
           d3.select(d3Container.current)
             .select(".circle-" + i.Index.toString())
+            .style("fill", "#007a7a")
             .style("stroke", "none");
         }
       })
       .on("click", function (d, i) {
         cityNames
           .attr("class", (d) => "text-" + d.Index.toString())
-          .style("font-weight", "normal");
+          .style("fill", "black");
         nodes
           .attr("class", d => "circle-" + d.Index.toString())
-          .style("stroke", "#7df9ff");
+          .style("fill", "#007a7a")
+          .style("stroke", "#007a7a");
       
         d3.select(d3Container.current)
           .select(".circle-" + i.Index.toString())
           .attr("class", "clicked")
+          .style("fill", "#BD5800")
           .style("stroke", "black");
         d3.select(this)
           .attr("class", "clicked")
-          .style("font-weight", "bold");
+          .style("fill", "#BD5800");
 
         onMouseover(i);
       });

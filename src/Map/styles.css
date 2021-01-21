@@ -1,6 +1,6 @@
 .map {
-    height: 80%;
-    width: 80%;
+    height: 100%;
+    width: 100%;
     margin: auto;
     transition-property: width, height;
     transition-duration: 0.5s;
@@ -8,8 +8,8 @@
 }
 
 .map.small-map {
-    height: 70%;
-    width: 70%;
+    height: 90%;
+    width: 90%;
 }
 
 @media (max-width: 900px) {

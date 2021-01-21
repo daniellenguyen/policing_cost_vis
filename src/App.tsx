@@ -15,7 +15,7 @@ export const App: React.FC = () => {
   }, []);
   const locationName = selectedCity
     ? selectedCity?.City + ", " + selectedCity?.State
-    : "Map of the States";
+    : "Choose a city";
 
   return (
     <div className="App">
@@ -42,8 +42,8 @@ export const App: React.FC = () => {
           Vera Institute of Justice
         </a>
         , which gathered it from datasets made public by each city's government.
-        <br />
-        <br />
+      </p>
+      <p className="explanation">
         With the exception of the policeman, which is a stock image, none of the
         photos shown in this visualization are of real people. They were
         generated using&nbsp;
@@ -55,16 +55,17 @@ export const App: React.FC = () => {
         racially diverse dataset.
       </p>
       <div className="visualization">
-        <h1 className={selectedCity ? "location selected" : "location"}>
-          {locationName}
-        </h1>
+        {/* <h1 className={selectedCity ? "location selected" : "location"}> */}
+        <h1 className="location">{locationName}</h1>
         <div className="vis-body">
-          <div className={selectedCity ? "top-row selected" : "top-row"}>
-            <BudgetComparison selectedCity={selectedCity} />
-            <BudgetPerCapita selectedCity={selectedCity} />
-            <PoliceToCivilianRatio selectedCity={selectedCity} />
+          <div className={selectedCity ? "left-side selected" : "left-side"}>
+            <div className={selectedCity ? "top-row selected" : "top-row"}>
+              <BudgetComparison selectedCity={selectedCity} />
+              <BudgetPerCapita selectedCity={selectedCity} />
+            </div>
+            <Map onMouseover={onMouseover} selectedCity={selectedCity} />
           </div>
-          <Map onMouseover={onMouseover} selectedCity={selectedCity} />
+          <PoliceToCivilianRatio selectedCity={selectedCity} />
         </div>
       </div>
     </div>

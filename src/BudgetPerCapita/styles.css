@@ -1,8 +1,8 @@
 .budget-per-capita {
     display: inline-block;
-    width: 20%;
+    width: 50%;
     height: 100%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 .budget-per-capita .hundred {

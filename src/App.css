@@ -26,12 +26,11 @@
 
 .title .title-card .officer {
   position: absolute;
-  width: 17%;
-  height: 33%;
-  top: 60%;
+  width: 23%;
+  height: 45%;
+  top: 55%;
   left: 42%;
   z-index: 3;
-
 }
 
 .title .title-card .title-text {
@@ -49,8 +48,8 @@
 .explanation {
   width: 45%;
   text-indent: 2em;
-  font-size: 1.5vw;
-  text-align: justify;
+  font-size: 1.3vw;
+  text-align: left;
   margin: auto;
   margin-top: 48px;
   font-family: 'georgia';
@@ -64,7 +63,7 @@
   flex-direction: column;
 }
 
-.location {
+/* .location {
   display: inline;
   margin: 0;
   font-size: 0px;
@@ -77,31 +76,56 @@
 
 .location.selected {
   font-size: 70px;
-}
+} */
 
-.vis-body {
-  display: block;
-  height: 90vh;
+.location {
+  display: inline;
+  margin: 0;
+  margin-top: 5vh;
+  margin-bottom: 2vh;
+  font-size: 70px;
+  font-weight: normal;
+  font-family: 'futura';
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  height: 10vh;
   width: 100vw;
 }
 
-.vis-body .top-row {
+.vis-body {
+  display: flex;
+  height: 83vh;
+  width: 100vw;
+}
+
+.vis-body .left-side {
+  display: flex;
+  flex-direction: column;
+  width: 70vw;
+  margin: auto
+}
+
+.vis-body .left-side.selected {
+  margin: unset
+}
+
+.vis-body .left-side .top-row {
   height: 0;
   width: 100%;
   transition-property: height, visibility;
   transition-duration: 0.5s;
   visibility: hidden;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: flex;
 }
 
-.vis-body .top-row.selected {
+.vis-body .left-side .top-row.selected {
   visibility: visible;
-  height: 30%;
+  height: 10%;
 }
 
 @media (max-width: 900px) {
-  .vis-body .top-row.selected {
+  .vis-body .left-side .top-row.selected {
     flex-direction: column;
     height: 90%;
   }
