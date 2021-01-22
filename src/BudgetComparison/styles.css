@@ -1,37 +1,60 @@
 .budget-comparison {
-  /* flex: 1 1 auto; */
   display: inline-block;
-  /* border: 1px solid blue; */
+  position: relative;
   height: 100%;
   width: 50%;
 }
 
+.budget-comparison-explainer {
+    font-family: "futura";
+}
+
+/* .budget-comparison-officer {
+    position: absolute;
+    right: 185px;
+    top: 82%;
+    width: 70px;
+    height: 70px;
+} */
+
 .svg-arrows {
     width: 100%;
     height: 100%;
-    /* border: 1px solid green; */
 }
 
 .budget-comparison .svg-arrows .policing-budget-arrow {
-    fill: none;
-    stroke: purple;
+    stroke: black;
     stroke-width: 1px;
 }
 
 .budget-comparison .svg-arrows .other-budget-arrow {
-    fill: none;
-    stroke: purple;
+    fill: #006666;
+    stroke: black;
     stroke-width: 1px;
 }
 
+.budget-comparison .svg-arrows .bracket {
+    fill: none;
+    stroke: black;
+    stroke-width: 4px;
+}
+
+.budget-comparison .svg-arrows .total-budget-text {
+    font: 30px "futura";
+}
+
 .budget-comparison .svg-arrows .policing-budget-text {
-    font: italic 40px serif;
-    fill: blue;
+    font: 40px "futura";
+    fill: white;
 }
 
 .budget-comparison .svg-arrows .other-budget-text {
-    font: italic 40px serif;
-    fill: blue;
+    font: 40px "futura";
+    fill: white;
+}
+
+.budget-comparison .svg-arrows .everything-else-text {
+    font: 30px "futura";
 }
 
 @media (max-width: 900px) {

@@ -23,7 +23,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   const d3Container = useRef(null);
   const [graphRendered, setGraphRendered] = useState(false);
   const message = selectedCity
-    ? `1 police officer for every ${ratio} people`
+    ? `There's one police officer for every ${ratio} people here`
     : "";
   const nodes = useRef<
     Selection<BaseType, { image: string; diameter: number }, BaseType, unknown>

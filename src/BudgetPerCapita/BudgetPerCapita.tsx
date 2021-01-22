@@ -10,7 +10,7 @@ export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
   }
 
   const budgetPerCapita = selectedCity.policing_budget_per_capita;
-  const budgetMessage = `Every taxpayer who lives here spent $${budgetPerCapita} on policing in 2019`;
+  const budgetMessage = `Every taxpayer here spent $${budgetPerCapita} on policing in 2019`;
 
   const addHundredDollarBills = () => {
     const numberOfBills = Math.round(budgetPerCapita / 100);

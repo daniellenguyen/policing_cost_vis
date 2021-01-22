@@ -50,9 +50,9 @@ export const App: React.FC = () => {
         <a href="https://thispersondoesnotexist.com">
           thispersondoesnotexist.com
         </a>
-        .&nbsp;The advantage here is that no one's consent is required, but the
-        disadvantage is that this particular model was not trained on a very
-        racially diverse dataset.
+        .&nbsp;This has the advantage of not requiring consent to show anyone's
+        image, but the disadvantage of not being trained on a racially diverse
+        dataset.
       </p>
       <div className="visualization">
         {/* <h1 className={selectedCity ? "location selected" : "location"}> */}

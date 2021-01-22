@@ -149,7 +149,7 @@ const Map = ({ onMouseover, selectedCity }) => {
     <div className={selectedCity ? "map small-map" : "map"} ref={d3Container}>
       <svg
         preserveAspectRatio="xMidYMid meet"
-        viewBox="-70 -30 1100 650"
+        viewBox={selectedCity? "0 0 1000 550" : "-70 -30 1100 650"}//"-70 -30 //1100 650"
         className="svg-content"
         height="100%"
         width="100%"

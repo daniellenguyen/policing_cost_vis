@@ -12,9 +12,10 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
 
   const numberWithCommas = (n: number) => {
     return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+  };
   const policingBudget = selectedCity.overall_policing_budget;
-  const percentPolicingBudget = selectedCity.percent_city_funds_spent_on_policing;
+  const percentPolicingBudget =
+    selectedCity.percent_city_funds_spent_on_policing;
   const totalBudget = (policingBudget * 100) / percentPolicingBudget;
   const otherBudget = Math.round(totalBudget - policingBudget);
   const policingBudgetString = "$" + numberWithCommas(policingBudget);
@@ -26,74 +27,136 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
     .range([30, 150]); // values chosen so that text can fit comfortably inside both arrows
 
   // keep this greater than 400px so the curve paths can still look good
-  const curvyArrowWidth = 800
-  const curvyArrowHeight = budgetToPixels(policingBudget)
-  const arrowWidth = 900
-  const arrowHeight = budgetToPixels(otherBudget)
-  const gapBetweenArrows = 0
+  const curvyArrowWidth = 500;
+  const curvyArrowHeight = budgetToPixels(policingBudget);
+  const arrowWidth = 600;
+  const arrowHeight = budgetToPixels(otherBudget);
+  const gapBetweenArrows = 0;
+  const arrowsStartY = 60;
 
   const createPolicingBudgetArrow = () => {
     const path =
-    // move to x = 0, y = below the Other budget arrow (+ 5 for spacing for now)
-    `M 0 ${arrowHeight + gapBetweenArrows}` +
-    // top horizontal line
-    ` H  ${curvyArrowWidth *0.6}` +
-    // top curve
-    ` C  ${curvyArrowWidth*0.9} ${arrowHeight + gapBetweenArrows}  
-         ${curvyArrowWidth*0.9} ${arrowHeight + 120}   
-         ${curvyArrowWidth*0.9} ${arrowHeight + 150}` +
-    // these two Ls are the arrow pointing part
-    ` L ${curvyArrowWidth*0.9 - curvyArrowHeight/2} ${arrowHeight + curvyArrowHeight/2 + 150}
-      L ${curvyArrowWidth*0.9 - curvyArrowHeight} ${arrowHeight + 150}` +
-    // bottom curve
-    ` C ${curvyArrowWidth*0.9 - curvyArrowHeight} ${arrowHeight + 120}
-        ${curvyArrowWidth*0.9 - curvyArrowHeight} ${arrowHeight + curvyArrowHeight + gapBetweenArrows}
-        ${curvyArrowWidth*0.6} ${arrowHeight + curvyArrowHeight + gapBetweenArrows}` +
-    // bottom horizontal line
-    ` H 0` +
-    // vertical line back to start of this polygon
-    ` V ${arrowHeight + gapBetweenArrows}`
-    return path
-  }
+      // move to x = 0, y = below the Other budget arrow (+ 5 for spacing for now)
+      `M 0 ${arrowHeight + gapBetweenArrows + arrowsStartY}` +
+      // top horizontal line
+      ` H  ${curvyArrowWidth * 0.6}` +
+      // top curve
+      ` C ${curvyArrowWidth * 0.9} ${arrowHeight + gapBetweenArrows + arrowsStartY}  
+          ${curvyArrowWidth * 0.9} ${arrowHeight + arrowsStartY + 120}   
+          ${curvyArrowWidth * 0.9} ${arrowHeight + arrowsStartY + 150}` +
+      // these two Ls are the arrow pointing part
+      ` L ${curvyArrowWidth * 0.9 - curvyArrowHeight / 2} 
+          ${arrowHeight  + arrowsStartY + curvyArrowHeight / 2 + 150}
+        L ${curvyArrowWidth * 0.9 - curvyArrowHeight} ${arrowHeight + arrowsStartY + 150}` +
+      // bottom curve
+      ` C ${curvyArrowWidth * 0.9 - curvyArrowHeight} ${arrowHeight + arrowsStartY + 120}
+        ${curvyArrowWidth * 0.9 - curvyArrowHeight} ${arrowHeight + curvyArrowHeight + gapBetweenArrows + arrowsStartY}
+        ${curvyArrowWidth * 0.6} ${arrowHeight + curvyArrowHeight + gapBetweenArrows + arrowsStartY}` +
+      // bottom horizontal line
+      ` H 0` +
+      // vertical line back to start of this polygon
+      ` V ${arrowHeight + gapBetweenArrows + arrowsStartY}`;
+    return path;
+  };
 
   const createOtherBudgetArrow = () => {
+    const path =
+      // move to x = 0, y = the arrow start position
+      `M 0 ${arrowsStartY} ` +
+      // draw a horizontal line from (0, 0) to (0, arrowWidth)
+      `H ${arrowWidth} ` +
+      // these two lines draw the arrow's point
+      `L ${arrowWidth + arrowHeight / 2} ${(arrowHeight / 2) + arrowsStartY} 
+       L ${arrowWidth} ${arrowHeight + arrowsStartY}` +
+      // draw a horizontal line to (0, arrow start position)
+      ` H 0 V ${arrowsStartY}`;
+    return path;
+  };
+
+  const createBracket = () => {
     const path = 
-    // move to 0, 0
-    `M 0 0 ` + 
-    // draw a horizontal line from (0, 0) to (0, arrowWidth)
-    `H ${arrowWidth} ` + 
-    // these two lines draw the arrow's point
-    `L ${arrowWidth + arrowHeight/2} ${arrowHeight/2} 
-     L ${arrowWidth} ${arrowHeight}` + 
-    // draw a horizontal line to (0, arrowWidth)
-    ` H 0 V 0`
-    return path
+    // move to -20 units above arrows
+    `M 30 -20` +
+    // first diagonal line
+    `L -20 30` +
+    // vertical line
+    `V ${arrowHeight + curvyArrowHeight + 100}` +
+    // second horizontal line
+    `L 10 ${(arrowHeight + curvyArrowHeight + 130)}` +
+    // little blip horizontal line
+    `M -20 ${(arrowHeight + curvyArrowHeight + 130)/2 - 15} H -40`
+    return path;
   }
 
   return (
     <div className="budget-comparison">
+      <p className="budget-comparison-explainer">
+        {selectedCity.City} spent {policingBudgetString} on policing in 2019
+      </p>
       {policingBudget && percentPolicingBudget && (
-        <svg viewBox="200 -150 600 600" className="svg-arrows">
-          <text 
-            className="other-budget-text" 
-            x="0" 
-            y={arrowHeight*.5 + 20}>
-              {otherBudgetString}
-          </text> 
+        <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" className="svg-arrows">
+          <defs>
+            <linearGradient id="gradient">
+              <stop offset="0%" stop-color="#006666" />
+              <stop offset="95%" stop-color="aquamarine" />
+            </linearGradient>
+          </defs>
+          <path
+            className="bracket"
+            d={createBracket()}
+          ></path>
           <path
             className="other-budget-arrow"
             d={createOtherBudgetArrow()}
           ></path>
-          <text 
-            className="policing-budget-text" 
-            x="0" 
-            y={arrowHeight + curvyArrowHeight*.5 + 15}>
-              {policingBudgetString}
-          </text>
           <path
             className="policing-budget-arrow"
             d={createPolicingBudgetArrow()}
+            fill="url(#gradient)"
           ></path>
+          <text
+            className="total-budget-text"
+            x="-50"
+            y="130"
+            text-anchor="end"
+            text-length="100">
+            {selectedCity.City}'s
+          </text>
+          <text
+            className="total-budget-text"
+            x="-50"
+            y="165"
+            text-length="100"
+            text-anchor="end"
+            >total budget
+          </text>
+          <text className="other-budget-text" 
+            x="0" 
+            y={arrowHeight * 0.5 + 20 + arrowsStartY}>
+            {otherBudgetString}
+          </text>
+          <text
+            className="policing-budget-text"
+            x="0"
+            y={arrowHeight + curvyArrowHeight * 0.5 + 15 + arrowsStartY}
+          >
+            {policingBudgetString}
+          </text>
+          <text
+          className="everything-else-text"
+          x={(arrowWidth + arrowHeight / 2) + 10}
+          y={(arrowHeight / 2) + arrowsStartY + 5} 
+          >
+            everything else
+          </text>
+          <image
+            className="budget-comparison-officer"
+            href="/policing_cost_vis/officer-large.png"
+            x={curvyArrowWidth - (curvyArrowHeight/2) - 150}
+            y={arrowHeight + arrowsStartY + 200}
+            width="200"
+            height="200"
+          ></image>
         </svg>
       )}
     </div>

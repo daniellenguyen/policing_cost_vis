@@ -29,7 +29,7 @@
   width: 23%;
   height: 45%;
   top: 55%;
-  left: 42%;
+  left: 40%;
   z-index: 3;
 }
 
@@ -62,21 +62,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* .location {
-  display: inline;
-  margin: 0;
-  font-size: 0px;
-  font-weight: normal;
-  transition-property: font-size;
-  transition-duration: 0.5s;
-  height: 10vh;
-  width: 100vw;
-}
-
-.location.selected {
-  font-size: 70px;
-} */
 
 .location {
   display: inline;
@@ -115,13 +100,12 @@
   transition-property: height, visibility;
   transition-duration: 0.5s;
   visibility: hidden;
-  /* border: 1px solid red; */
   display: flex;
 }
 
 .vis-body .left-side .top-row.selected {
   visibility: visible;
-  height: 10%;
+  height: 30%;
 }
 
 @media (max-width: 900px) {
