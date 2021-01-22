@@ -2,7 +2,7 @@
     height: 0%;
     width: 0%;
     transition-property: height, width, visibility;
-    transition-duration: 0.5s;
+    transition-duration: 1s;
     visibility: hidden;
     /* border: 1px solid red; */
     display: block;

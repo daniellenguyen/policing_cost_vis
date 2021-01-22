@@ -13,6 +13,8 @@
 .budget-per-capita .hundred {
     width: 125px;
     height: 53px;
+    margin: 5px;
+    box-shadow: 2px 2px 2px grey;
 }
 
 @media (max-width: 900px) {
