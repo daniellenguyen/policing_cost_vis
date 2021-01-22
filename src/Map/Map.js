@@ -31,7 +31,6 @@ const Map = ({ onMouseover, selectedCity }) => {
     .style("fill", "white")
     .style("stroke", "gray")
     .style("stroke-width", 0.5)
-    // .classed("states-layout", true)
 
     // state path
     svgContainer

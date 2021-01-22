@@ -51,8 +51,17 @@
   font-size: 1.3vw;
   text-align: left;
   margin: auto;
-  margin-top: 48px;
   font-family: 'georgia';
+}
+
+.explanation.first {
+  margin-top: 48px;
+  margin-bottom: 24px;
+}
+
+.explanation.second {
+  margin-top: 24px;
+  margin-bottom: 48px;
 }
 
 .visualization {

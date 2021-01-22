@@ -34,7 +34,7 @@ export const App: React.FC = () => {
           <h1 className="title-text">The Cost of Policing in America</h1>
         </div>
       </div>
-      <p className="explanation">
+      <p className="explanation first">
         This is an interactive exploration of how various cities in the U.S.
         fund their local police forces. The data behind it was compiled by
         the&nbsp;
@@ -43,7 +43,7 @@ export const App: React.FC = () => {
         </a>
         , which gathered it from datasets made public by each city's government.
       </p>
-      <p className="explanation">
+      <p className="explanation second">
         With the exception of the policeman, which is a stock image, none of the
         photos shown in this visualization are of real people. They were
         generated using&nbsp;
