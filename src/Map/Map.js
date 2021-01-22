@@ -20,15 +20,29 @@ const Map = ({ onMouseover, selectedCity }) => {
     const svgContainer = d3.select(d3Container.current).select(".svg-content");
     const path = d3.geoPath();
 
+    // add separate state and nation paths so map won't have spotty white fill
+    // nation path
+    svgContainer
+    .append("path")
+    .attr(
+      "d",
+      path(topojson.mesh(statesOutline, statesOutline.objects.nation))
+    )
+    .style("fill", "white")
+    .style("stroke", "gray")
+    .style("stroke-width", 0.5)
+    // .classed("states-layout", true)
+
+    // state path
     svgContainer
       .append("path")
       .attr(
         "d",
         path(topojson.mesh(statesOutline, statesOutline.objects.states))
       )
+      .style("fill", "none")
       .style("stroke", "gray")
       .style("stroke-width", 0.5)
-      .style("fill", "none");
 
     const nodes = svgContainer
       .selectAll("circle")

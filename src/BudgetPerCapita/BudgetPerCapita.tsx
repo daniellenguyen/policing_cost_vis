@@ -26,7 +26,7 @@ export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
 
   return (
     <div className="budget-per-capita">
-      <p>{budgetMessage}</p>
+      <p className="budget-message">{budgetMessage}</p>
       {addHundredDollarBills()}
     </div>
   );

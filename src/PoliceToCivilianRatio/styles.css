@@ -21,6 +21,8 @@
 }
 
 .police-to-civilian-ratio .message {
+    font-size: 16px;
+    font-family: "futura";
     height: 10%;
     margin: 0;
 }

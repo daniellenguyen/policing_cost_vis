@@ -1,3 +1,4 @@
+
 .map {
     height: 100%;
     width: 100%;
@@ -6,6 +7,10 @@
     transition-duration: 0.5s;
     margin-bottom: 40px;
 }
+
+/* .states-layout {
+    fill: none;
+} */
 
 .map.small-map {
     height: 70%;
