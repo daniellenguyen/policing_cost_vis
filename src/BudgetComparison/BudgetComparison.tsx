@@ -98,7 +98,7 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
       </p>
       {policingBudget && percentPolicingBudget && (
         <svg 
-          viewBox={isSmallScreen ? "-300 -40 1300 700" : "0 0 600 600"}
+          viewBox={isSmallScreen ? "-350 -40 1300 700" : "0 0 600 600"}
           preserveAspectRatio="xMidYMid meet" 
           className="svg-arrows"
           >

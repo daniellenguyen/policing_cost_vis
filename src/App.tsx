@@ -37,7 +37,7 @@ export const App: React.FC = () => {
       <p className="explanation first">
         This is an interactive exploration of how various cities in the U.S.
         fund their local police forces. The data behind it was compiled by
-        the&nbsp;
+        the{" "}
         <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities">
           Vera Institute of Justice
         </a>
@@ -46,11 +46,11 @@ export const App: React.FC = () => {
       <p className="explanation second">
         With the exception of the policeman, which is a stock image, none of the
         photos shown in this visualization are of real people. They were
-        generated using&nbsp;
+        generated using{" "}
         <a href="https://thispersondoesnotexist.com">
           thispersondoesnotexist.com
         </a>
-        .&nbsp;This has the advantage of not requiring consent to show anyone's
+        . This has the advantage of not requiring consent to show anyone's
         image, but the disadvantage of not being trained on a racially diverse
         dataset.
       </p>

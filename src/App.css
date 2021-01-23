@@ -127,7 +127,12 @@
   margin: 40px 20px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) { 
+  .location {
+    font-size: 50px;
+    height: unset;
+  }
+
   .vis-body{
     flex-direction: column;
     height: unset;
