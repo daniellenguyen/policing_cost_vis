@@ -1,16 +1,21 @@
 import React from "react";
 import "./styles.css";
 import { City } from "../City";
+import { useMediaQuery } from "beautiful-react-hooks";
 
 export const BudgetPerCapita: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
+  const isSmallScreen = useMediaQuery("(max-width: 1200px)");
+
   if (!selectedCity) {
     return <div className="budget-per-capita">hello</div>;
   }
 
   const budgetPerCapita = selectedCity.policing_budget_per_capita;
-  const budgetMessage = `Every taxpayer here spent $${budgetPerCapita} on policing in 2019, or about this much`;
+  const budgetMessage = `Every taxpayer ${
+    isSmallScreen ? " in " + selectedCity.City : "here"
+  } spent $${budgetPerCapita} on policing in 2019, or about this much`;
 
   const addHundredDollarBills = () => {
     const numberOfBills = Math.round(budgetPerCapita / 100);
