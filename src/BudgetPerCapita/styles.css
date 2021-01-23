@@ -1,8 +1,7 @@
 .budget-per-capita {
     display: inline-block;
-    width: 50%;
+    width: 40%;
     height: 100%;
-    /* border: 1px solid green; */
 }
 
 .budget-per-capita .budget-message {
@@ -17,9 +16,14 @@
     box-shadow: 2px 2px 2px grey;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .budget-per-capita {
-        width: 100%;
-        height: 33%;
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .budget-per-capita .budget-message {
+        font-size: 20px;
+        margin: 20px auto;
     }
 }

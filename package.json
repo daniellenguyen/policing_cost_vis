@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/d3": "^6.2.0",
     "@types/topojson": "^3.2.2",
+    "beautiful-react-hooks": "^0.31.0",
     "d3": "^6.2.0",
     "d3-drag": "^2.0.0",
     "d3-force-cluster": "^0.1.2",

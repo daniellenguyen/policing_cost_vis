@@ -4,6 +4,7 @@ import * as topojson from "topojson";
 import "./styles.css";
 import citiesData from "../data/us_cities_with_FID.json";
 import statesOutline from "../data/states_outline.json";
+import { useMediaQuery } from 'beautiful-react-hooks'; 
 
 // Had to slightly change long/lat manually for some cities so they wouldn't overlap.
 // Here are the original long/lat for those cities:
@@ -15,6 +16,7 @@ import statesOutline from "../data/states_outline.json";
 
 const Map = ({ onMouseover, selectedCity }) => {
   const d3Container = useRef(null);
+  const isSmallScreen = useMediaQuery('(max-width: 1200px)'); 
 
   useEffect(() => {
     const svgContainer = d3.select(d3Container.current).select(".svg-content");
@@ -162,7 +164,7 @@ const Map = ({ onMouseover, selectedCity }) => {
     <div className={selectedCity ? "map small-map" : "map"} ref={d3Container}>
       <svg
         preserveAspectRatio="xMidYMid meet"
-        viewBox={selectedCity? "0 0 1000 550" : "-70 -30 1100 650"}//"-70 -30 //1100 650"
+        viewBox={isSmallScreen ? "-80 -30 1100 650" : "-70 -30 1100 650"}
         className="svg-content"
         height="100%"
         width="100%"

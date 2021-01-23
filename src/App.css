@@ -46,12 +46,14 @@
 }
 
 .explanation {
-  width: 45%;
+  max-width: 650px;
   text-indent: 2em;
-  font-size: 1.3vw;
+  font-size: 20px;
   text-align: left;
   margin: auto;
   font-family: 'georgia';
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .explanation.first {
@@ -82,7 +84,7 @@
   font-weight: normal;
   font-family: 'futura';
   transition-property: font-size;
-  transition-duration: 0.5s;
+  transition-duration: 4s;
   height: 10vh;
   width: 100vw;
 }
@@ -101,7 +103,7 @@
 }
 
 .vis-body .left-side.selected {
-  margin: unset
+  margin: unset;
 }
 
 .vis-body .left-side .top-row {
@@ -118,7 +120,28 @@
   height: 30%;
 }
 
-@media (max-width: 900px) {
+.vis-body .left-side .cta-reclick {
+  font-family: "futura";
+  font-size: 50px;
+  font-weight: normal;
+  margin: 40px 20px;
+}
+
+@media (max-width: 1200px) {
+  .vis-body{
+    flex-direction: column;
+    height: unset;
+  }
+
+  .vis-body .left-side {
+    width: 100vw;
+    order: 2;
+  }
+
+  .vis-body .left-side.selected {
+    margin-top: 5%;
+  }
+
   .vis-body .left-side .top-row.selected {
     flex-direction: column;
     height: 90%;

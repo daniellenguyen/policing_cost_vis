@@ -4,6 +4,7 @@ import "./styles.css";
 import { City } from "../City";
 import imageData from "../data/faces_data.json";
 import { Simulation, SimulationNodeDatum, BaseType, Selection } from "d3";
+import { useMediaQuery } from 'beautiful-react-hooks'; 
 
 function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T>();
@@ -16,7 +17,7 @@ function usePrevious<T>(value: T): T | undefined {
 export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
-
+  const isSmallScreen = useMediaQuery('(max-width: 1200px)'); 
   const ratio =
     (selectedCity?.police_dept_employee_to_resident_ratio as number) + 1; // extra 1 for the police officer node
   const prevRatio = usePrevious(ratio);
@@ -29,15 +30,11 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     Selection<BaseType, { image: string; diameter: number }, BaseType, unknown>
   >();
   const simulation = useRef<Simulation<SimulationNodeDatum, undefined>>();
-  // const parent = document.getElementById("police-to-civilian-ratio")
-  // const parentWidth = parent?.clientWidth as number// make sure this value changes when screen resizes. add resize event listener
-  // const parentHeight = parent?.clientHeight as number * 10
+  
   const ticked = (nodes: any) => {
     nodes
-      .attr("x", (d: any) => (d as any).x)  //[radius, width - radius] for x, [radius, height - radius] for y
+      .attr("x", (d: any) => (d as any).x)
       .attr("y", (d: any) => (d as any).y);
-      // .attr("x", (d: any) => Math.max(d.diameter, Math.min(parentWidth - d.diameter, d.x)))
-      // .attr("y", (d: any) => Math.max(d.diameter, Math.min(parentHeight - d.diameter, d.y)))
   };
 
   useEffect(() => {
@@ -158,12 +155,12 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   }
 
   return (
-    <div className={selectedCity? "police-to-civilian-ratio selected" : "police-to-civilian-ratio"} id="police-to-civilian-ratio" ref={d3Container}>
+    <div className={selectedCity ? "police-to-civilian-ratio selected" : "police-to-civilian-ratio"} id="police-to-civilian-ratio" ref={d3Container}>
       {selectedCity && <p className="message">{message}</p>}
       <svg
         preserveAspectRatio="xMidYMin meet"
         // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox="0 -200 1500 1500" 
+        viewBox={isSmallScreen ? "-400 -200 2000 2000": "0 0 2000 2000"} // "0 -200 1500 1500"
         className="graph-container"
       ></svg>
     </div>

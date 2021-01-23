@@ -2,20 +2,12 @@
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 50%;
+  width: 60%;
 }
 
 .budget-comparison-explainer {
     font-family: "futura";
 }
-
-/* .budget-comparison-officer {
-    position: absolute;
-    right: 185px;
-    top: 82%;
-    width: 70px;
-    height: 70px;
-} */
 
 .svg-arrows {
     width: 100%;
@@ -57,9 +49,13 @@
     font: 30px "futura";
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1200px) {
     .budget-comparison {
-        width: 100%;
-        height: 33%;
+        width: 90%;
+        margin: auto;
+    }
+
+    .budget-comparison-explainer {
+        font-size: 20px;
     }
 }

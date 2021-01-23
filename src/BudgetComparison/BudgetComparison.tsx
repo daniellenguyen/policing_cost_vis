@@ -2,10 +2,13 @@ import React from "react";
 import * as d3 from "d3";
 import "./styles.css";
 import { City } from "../City";
+import { useMediaQuery } from 'beautiful-react-hooks'; 
 
 export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
+  const isSmallScreen = useMediaQuery('(max-width: 1200px)'); 
+
   if (!selectedCity) {
     return <div className="budget-comparison"></div>;
   }
@@ -94,11 +97,15 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
         {selectedCity.City} spent {policingBudgetString} on policing in 2019
       </p>
       {policingBudget && percentPolicingBudget && (
-        <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" className="svg-arrows">
+        <svg 
+          viewBox={isSmallScreen ? "-300 -40 1300 700" : "0 0 600 600"}
+          preserveAspectRatio="xMidYMid meet" 
+          className="svg-arrows"
+          >
           <defs>
             <linearGradient id="gradient">
-              <stop offset="0%" stop-color="#006666" />
-              <stop offset="95%" stop-color="aquamarine" />
+              <stop offset="0%" stopColor="#006666" />
+              <stop offset="95%" stopColor="aquamarine" />
             </linearGradient>
           </defs>
           <path
@@ -118,7 +125,7 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
             className="total-budget-text"
             x="-50"
             y="130"
-            text-anchor="end"
+            textAnchor="end"
             text-length="100">
             {selectedCity.City}'s
           </text>
@@ -127,7 +134,7 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
             x="-50"
             y="165"
             text-length="100"
-            text-anchor="end"
+            textAnchor="end"
             >total budget
           </text>
           <text className="other-budget-text" 

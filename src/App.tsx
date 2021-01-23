@@ -5,10 +5,10 @@ import BudgetComparison from "./BudgetComparison/BudgetComparison";
 import PoliceToCivilianRatio from "./PoliceToCivilianRatio/PoliceToCivilianRatio";
 import BudgetPerCapita from "./BudgetPerCapita/BudgetPerCapita";
 import { City } from "./City";
+import { useMediaQuery } from "beautiful-react-hooks";
 
 export const App: React.FC = () => {
-  // remember to do css for mobile
-
+  const isSmallScreen = useMediaQuery("(max-width: 1200px)");
   const [selectedCity, setSelectedCity] = useState<City>(null);
   const onMouseover = useCallback((newCity: City) => {
     setSelectedCity(newCity);
@@ -55,7 +55,6 @@ export const App: React.FC = () => {
         dataset.
       </p>
       <div className="visualization">
-        {/* <h1 className={selectedCity ? "location selected" : "location"}> */}
         <h1 className="location">{locationName}</h1>
         <div className="vis-body">
           <div className={selectedCity ? "left-side selected" : "left-side"}>
@@ -63,6 +62,9 @@ export const App: React.FC = () => {
               <BudgetComparison selectedCity={selectedCity} />
               <BudgetPerCapita selectedCity={selectedCity} />
             </div>
+            {isSmallScreen && selectedCity !== null && (
+              <h1 className="cta-reclick">Now choose another city</h1>
+            )}
             <Map onMouseover={onMouseover} selectedCity={selectedCity} />
           </div>
           <PoliceToCivilianRatio selectedCity={selectedCity} />
