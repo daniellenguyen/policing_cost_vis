@@ -8,18 +8,17 @@
     margin-bottom: 40px;
 }
 
-/* .states-layout {
-    fill: none;
-} */
-
 .map.small-map {
-    height: 70%;
-    width: 70%;
+    height: 75%;
+    width: 75%;
+    margin: unset;
+    margin-left: 20%;
 }
 
 @media (max-width: 1200px) {
     .map.small-map {
         height: 100%;
         width: 100%;
+        margin: auto;
     }
 }

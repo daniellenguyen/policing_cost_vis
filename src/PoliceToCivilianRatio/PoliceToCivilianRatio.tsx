@@ -30,7 +30,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     Selection<BaseType, { image: string; diameter: number }, BaseType, unknown>
   >();
   const simulation = useRef<Simulation<SimulationNodeDatum, undefined>>();
-  
+
   const ticked = (nodes: any) => {
     nodes
       .attr("x", (d: any) => (d as any).x)
@@ -128,7 +128,6 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       })
       .on("drag", function (this: any, event: DragEvent, d: any) {
         // if (simulation.current) {
-
           simulation.current?.alpha(0.4).restart();
         // }
         d3.select(this)
@@ -160,7 +159,7 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       <svg
         preserveAspectRatio="xMidYMin meet"
         // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox={isSmallScreen ? "-400 -200 2000 2000": "0 0 2000 2000"} // "0 -200 1500 1500"
+        viewBox={isSmallScreen ? "-400 -200 2000 2000": "-400 -200 2000 2000"}
         className="graph-container"
       ></svg>
     </div>
