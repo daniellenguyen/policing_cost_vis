@@ -4,7 +4,6 @@ import "./styles.css";
 import { City } from "../City";
 import imageData from "../data/faces_data.json";
 import { Simulation, SimulationNodeDatum, BaseType, Selection } from "d3";
-import { useMediaQuery } from 'beautiful-react-hooks'; 
 
 function usePrevious<T>(value: T): T | undefined {
   const ref = useRef<T>();
@@ -17,7 +16,6 @@ function usePrevious<T>(value: T): T | undefined {
 export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
-  const isSmallScreen = useMediaQuery('(max-width: 1200px)'); 
   const ratio =
     (selectedCity?.police_dept_employee_to_resident_ratio as number) + 1; // extra 1 for the police officer node
   const prevRatio = usePrevious(ratio);
@@ -99,15 +97,15 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
       .attr("x", (d) => (d as any).x)
       .attr("y", (d) => (d as any).y)
       .attr("height", 50)
-      .attr("width", 50) // shouldn't it have to do with diameter too?
+      .attr("width", 50)
       .attr("transform", "translate(500, 800)");
 
     simulation.current = d3
       .forceSimulation(imageData.slice(0, ratio) as any)
       .velocityDecay(0.1)
       .alphaDecay(0.1)
-      .alpha(1)
-      .force("x", d3.forceX().strength(0.04))
+      .alpha(0.4)
+      .force("x", d3.forceX().strength(0.02))
       .force("y", d3.forceY().strength(0.02))
       .force(
         "collision",
@@ -122,21 +120,17 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
     const drag = d3
       .drag()
       .on("start", (event: any) => {
-        // if (simulation.current) {
-          simulation.current?.alpha(0.4).restart();
-        // }
+        simulation.current?.alpha(0.4).restart();
       })
       .on("drag", function (this: any, event: DragEvent, d: any) {
-        // if (simulation.current) {
-          simulation.current?.alpha(0.4).restart();
-        // }
+        simulation.current?.alpha(0.4).restart();
         d3.select(this)
           .attr("x", (d.x = event.x))
           .attr("y", (d.y = event.y))
           .style("cursor", "grabbing");
       })
       .on("end", function (this: any, event: any, d: any) {
-        d3.select(this).style("cursor", "grab")
+        d3.select(this).style("cursor", "grab");
       });
 
     d3.select(d3Container.current)
@@ -154,12 +148,21 @@ export const PoliceToCivilianRatio: React.FC<{ selectedCity: City }> = ({
   }
 
   return (
-    <div className={selectedCity ? "police-to-civilian-ratio selected" : "police-to-civilian-ratio"} id="police-to-civilian-ratio" ref={d3Container}>
+    <div
+      className={
+        selectedCity
+          ? "police-to-civilian-ratio selected"
+          : "police-to-civilian-ratio"
+      }
+      id="police-to-civilian-ratio"
+      ref={d3Container}
+    >
       {selectedCity && <p className="message">{message}</p>}
       <svg
         preserveAspectRatio="xMidYMin meet"
-        // if you change the viewbox size, you have to change the strength of collision and force x and y on the simulation too
-        viewBox={isSmallScreen ? "-400 -200 2000 2000": "-400 -200 2000 2000"}
+        // if you change the viewbox size, you have to change
+        // the strength of collision and force x and y on the simulation too
+        viewBox="-400 -200 2000 2000"
         className="graph-container"
       ></svg>
     </div>

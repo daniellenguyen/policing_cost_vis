@@ -36,8 +36,7 @@ export const App: React.FC = () => {
       </div>
       <p className="explanation first">
         This is an interactive exploration of how various cities in the U.S.
-        fund their local police forces. The data behind it was compiled by
-        the{" "}
+        fund their local police forces. The data behind it was compiled by the{" "}
         <a href="https://www.vera.org/publications/what-policing-costs-in-americas-biggest-cities">
           Vera Institute of Justice
         </a>
