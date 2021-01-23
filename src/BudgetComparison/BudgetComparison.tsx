@@ -8,9 +8,20 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
   selectedCity,
 }) => {
   const isSmallScreen = useMediaQuery("(max-width: 1200px)");
+  const isMediumScreen = useMediaQuery("(max-width: 1500px)");
 
   if (!selectedCity) {
     return <div className="budget-comparison"></div>;
+  }
+
+  const findViewBox = () => {
+    if(isSmallScreen) {
+      return "-350 -40 1300 700"
+    } else if (isMediumScreen) {
+      return "-100 0 800 800"
+    } else {
+      return "0 0 600 600"
+    }
   }
 
   const numberWithCommas = (n: number) => {
@@ -129,7 +140,7 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
       </p>
       {policingBudget && percentPolicingBudget && (
         <svg
-          viewBox={isSmallScreen ? "-350 -40 1300 700" : "0 0 600 600"}
+          viewBox={findViewBox()}
           preserveAspectRatio="xMidYMid meet"
           className="svg-arrows"
         >
