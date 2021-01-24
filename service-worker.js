@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/policing_cost_vis/precache-manifest.1a55da8cb65bf0855d8fa1081e384238.js"
+  "/policing_cost_vis/precache-manifest.661a805fb3a2b634332113eab73adca8.js"
 );
 
 self.addEventListener('message', (event) => {
