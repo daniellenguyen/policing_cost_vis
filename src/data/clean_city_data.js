@@ -24,10 +24,6 @@ const budgetToRadius = d3.scaleLinear()
     .domain([14493787, 11036298140]) // lowest to highest policing budget. 14 million to 1 billion
     .range([5, 100]) //log scale alternative button. explain scaling decision in a small blurb. scaling decision gets across that ny spends 10 times more than any other city
 
-// TODO write test on whether FID coordinates matches city name
-// TODO tests on proper type for policing budget etc
-// TODO data tests in general
-// TODO how many circles are on the screen
 const cleaned_city_info = []
 const projection = d3.geoAlbersUsa().scale(1300).translate([487.5, 305])
 

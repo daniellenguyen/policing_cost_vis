@@ -23,7 +23,7 @@ export const App: React.FC = () => {
         <img
           className="title-image"
           alt="title with people mosaic"
-          src="/policing_cost_vis/title-image.png"
+          src="/policing_cost_vis/title-image.jpeg"
         />
         <div className="title-card">
           <img
@@ -46,7 +46,7 @@ export const App: React.FC = () => {
         With the exception of the policeman, which is a stock image, none of the
         photos shown in this visualization are of real people. They were
         generated using{" "}
-        <a href="https://thispersondoesnotexist.com">
+        <a className="explanation-link" href="https://thispersondoesnotexist.com">
           thispersondoesnotexist.com
         </a>
         . This has the advantage of not requiring consent to show anyone's
@@ -61,9 +61,6 @@ export const App: React.FC = () => {
               <BudgetComparison selectedCity={selectedCity} />
               <BudgetPerCapita selectedCity={selectedCity} />
             </div>
-            {isSmallScreen && selectedCity !== null && (
-              <h1 className="cta-reclick">Now choose another city</h1>
-            )}
             <Map onMouseover={onMouseover} selectedCity={selectedCity} />
           </div>
           <PoliceToCivilianRatio selectedCity={selectedCity} />

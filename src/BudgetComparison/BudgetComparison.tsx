@@ -16,9 +16,9 @@ export const BudgetComparison: React.FC<{ selectedCity: City }> = ({
 
   const findViewBox = () => {
     if(isSmallScreen) {
-      return "-350 -40 1300 700"
+      return "-275 -40 1200 700"
     } else if (isMediumScreen) {
-      return "-100 0 800 800"
+      return "-100 0 600 600"
     } else {
       return "0 0 600 600"
     }
