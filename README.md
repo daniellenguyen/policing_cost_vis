@@ -4,13 +4,9 @@ I made a visualization of [Vera Institute of Justice's](https://www.vera.org/pub
 
 Here's the link to it: https://daniellenguyen.github.io/policing_cost_vis/
 
-Here's how it's supposed to look on [mobile](/policing_cost_vis/mobile-snapshot.jpg), [desktop](/policing_cost_vis/desktop-snapshot.jpeg), and [desktop large view.](/policing_cost_vis/desktop-snapshot-large.jpeg)
+Here's how it's supposed to look on [mobile](mobile-snapshot.jpg), [desktop](desktop-snapshot.jpeg), and [desktop large view.](desktop-snapshot-large.jpeg)
 
 I used React, D3, and some miscellaneous Node scripts to make this. I also used Typescript, which annoyed me quite a bit to use in conjunction with D3. I'm not sure if I'll use it again for my d3 projects.
-
-# What I don't have time to do right now but might have time to do later:
-
-I want to make the arrows I hard coded in svg for this visualization into something people can download and tweak to use in their own visualizations. I was unable to find a sankey diagram in javascript that had only one parent node, two child nodes, and used arrows, so I had to just draw it and it took a whole day (especially the curved arrow, which I debugged using [Mike Bostock's example of De Casteljau’s Algorithm](https://observablehq.com/@mbostock/de-casteljaus-algorithm) and I'm very proud of it). But now it could theoretically be used for any dataset where the user needs to compare two values using a sankey diagram - I've just got to make a generalized version of it.
 
 # Where I got the data from and how I treated it:
 
@@ -29,6 +25,10 @@ Also, before joining the coordinate data, convert it into pixel coordinates thro
 
 5. Write a script to get a bunch of fake photos of people from [thispersondoesexist.com](thispersondoesnotexist.com). I waited 10 seconds between each request because I'm a nice person and a good internet steward.
 Crop each photo to be circular and reduce it to 30x30 px.
+
+# What I don't have time to do right now but might do later:
+
+I want to make the arrows I hard coded in svg for this visualization into something people can download and tweak to use in their own visualizations. I was unable to find a sankey diagram in javascript that had only one parent node, two child nodes, and used arrows, so I had to just draw it and it took a whole day (especially the curved arrow, which I debugged using [Mike Bostock's example of De Casteljau’s Algorithm](https://observablehq.com/@mbostock/de-casteljaus-algorithm) and I'm very proud of it). But now it could theoretically be used for any dataset where the user needs to compare two values using a sankey diagram - I've just got to make a generalized version of it.
 
 # My note to myself: how to deploy this on my github pages site because it's a submodule there:
 
