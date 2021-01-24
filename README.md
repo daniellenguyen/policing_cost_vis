@@ -6,7 +6,7 @@ Here's the link to it: https://daniellenguyen.github.io/policing_cost_vis/
 
 Here's how it's supposed to look on [mobile](https://github.com/daniellenguyen/policing_cost_vis/blob/main/public/mobile-snapshot.jpg), [desktop](https://github.com/daniellenguyen/policing_cost_vis/blob/main/public/desktop-snapshot.jpeg), and [desktop large view.](https://github.com/daniellenguyen/policing_cost_vis/blob/main/public/desktop-snapshot-large.jpeg)
 
-I used React, D3, and some miscellaneous Node scripts to make this. I also used Typescript, which annoyed me quite a bit to use in conjunction with D3. I'm not sure if I'll use it again for my d3 projects.
+I used React, D3, and some miscellaneous Node and bash scripts to make this. I also used Typescript, which annoyed me quite a bit to use in conjunction with D3. I'm not sure if I'll use it again for my d3 projects.
 
 # Where I got the data from and how I treated it:
 
@@ -49,6 +49,6 @@ git push origin master
 
 # I'm so flattered you want to try running this locally!
 
-I've never tried to clone this repo myself, so all I can tell you is that I used Yarn, Create React App, and the Chrome browser to make this. You hopefully can just run `yarn start` and it'll work out for you. If it doesn't, you can dm me at @_nguyendanielle on Twitter.
+I've never tried to clone this repo myself, so all I can tell you is that I used Yarn, Create React App, and the Chrome browser to build and test. You hopefully can just run `yarn start` and it'll work out for you. If it doesn't, you can dm me at @_nguyendanielle on Twitter.
 
 
