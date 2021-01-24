@@ -30,7 +30,7 @@ Crop each photo to be circular and reduce it to 30x30 px.
 
 I want to make the arrows I hard coded in svg for this visualization into something people can download and tweak to use in their own visualizations. I was unable to find a sankey diagram in javascript that had only one parent node, two child nodes, and used arrows, so I had to just draw it and it took a whole day (especially the curved arrow, which I debugged using [Mike Bostock's example of De Casteljau’s Algorithm](https://observablehq.com/@mbostock/de-casteljaus-algorithm) and I'm very proud of it). But now it could theoretically be used for any dataset where the user needs to compare two values using a sankey diagram - I've just got to make a generalized version of it.
 
-# A note to myself on how to deploy this to my Github Pages site:
+# A note to myself on how to deploy this to Github Pages:
 
 ```
 cd policing_cost_vis
